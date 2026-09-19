@@ -1,0 +1,117 @@
+:root {
+    --daralla-font-size: unset;
+}
+
+/* Credits to Ferrocene */
+
+@media (-moz-pref("daralla.font", "SF-Pro")) {
+    :root {
+        --daralla-font: "SF-Pro";
+    }
+}
+
+@media (-moz-pref("daralla.font", "SUSE")) {
+    :root {
+        --daralla-font: "SUSE";
+    }
+}
+
+@media (-moz-pref("daralla.font", "SUSEMono")) {
+    :root {
+        --daralla-font: "SUSEMono";
+    }
+    
+    #titlebar .zen-current-workspace-indicator > label{
+        padding-top: 2px !important;
+    }
+}
+
+@media (-moz-pref("daralla.font", "Bricolage")) {
+    :root {
+        --daralla-font: "Bricolage";
+    }
+}
+
+@media (-moz-pref("daralla.font", "GeistMono")) {
+    :root {
+        --daralla-font: "GeistMono";
+    }
+    
+    #titlebar .zen-current-workspace-indicator > label{
+        padding-top: 2px !important;
+    }
+}
+
+@media (-moz-pref("daralla.font", "JetBrainsMono")) {
+    :root {
+        --daralla-font: "JetBrainsMono";
+    }
+    
+    #titlebar .zen-current-workspace-indicator > label{
+        padding-top: 2px !important;
+    }
+}
+
+@media (-moz-pref("daralla.font", "Monocraft")) {
+    :root {
+        --daralla-font: "Monocraft";
+    }
+}
+
+@font-face {
+    font-family: "SF-Pro";
+    src: url("https://github.com/SehajveerSingh2005/zen-wireframe-2.0/raw/refs/heads/main/fonts/SF-Pro.ttf");
+    font-weight: var(--daralla-font_weight) !important;
+}
+
+@font-face {
+    font-family: "SUSE";
+    src: url("https://github.com/SehajveerSingh2005/zen-wireframe-2.0/raw/refs/heads/main/fonts/SUSE-Regular.ttf");
+    font-weight: var(--daralla-font_weight) !important;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SUSEMono";
+    src: url("https://github.com/SehajveerSingh2005/zen-wireframe-2.0/raw/refs/heads/main/fonts/SUSEMono-Regular.ttf");
+    font-weight: var(--daralla-font_weight) !important;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Bricolage";
+    src: url("https://github.com/SehajveerSingh2005/zen-wireframe-2.0/raw/refs/heads/main/fonts/BricolageGrotesque-Regular.ttf");
+    font-weight: var(--daralla-font_weight) !important;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GeistMono";
+    src: url("https://github.com/SehajveerSingh2005/zen-wireframe-2.0/raw/refs/heads/main/fonts/GeistMono-Regular.ttf");
+    font-weight: var(--daralla-font_weight) !important;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "JetBrainsMono";
+    src: url("https://github.com/SehajveerSingh2005/zen-wireframe-2.0/raw/refs/heads/main/fonts/JetBrainsMono-Regular.ttf");
+    font-weight: var(--daralla-font_weight) !important;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Monocraft";
+    src: url("https://github.com/SehajveerSingh2005/zen-wireframe-2.0/raw/refs/heads/main/fonts/Monocraft.ttf");
+    font-weight: var(--daralla-font_weight) !important;
+    font-style: normal;
+}
+
+* {
+    font-weight: var(--daralla-font_weight) !important;
+    font-family: var(--daralla-font);
+}
+
+.tab-text,
+.tab-group-label{
+    font-size: var(--daralla-font-size) !important;
+}

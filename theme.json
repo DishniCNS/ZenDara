@@ -1,0 +1,34 @@
+{
+  "id": "daralla",
+  "name": "Daralla",
+  "description": "Daralla — a compact adaptive Zen Browser interface with Wireframe geometry, Zia-inspired dynamic UI, Command Center, media, site colors and split-view interactions.",
+  "author": "Dishni",
+  "version": "0.2.0",
+  "style": {
+    "chrome": "userChrome.css"
+  },
+  "scripts": {
+    "scripts/daralla.uc.js": {
+      "include": [
+        "chrome://browser/content/browser.xhtml"
+      ]
+    }
+  },
+  "preferences": "preferences.json",
+  "tags": [
+    "chrome",
+    "theme",
+    "adaptive",
+    "sidebar",
+    "split-view",
+    "media"
+  ],
+  "fork": [
+    "zen"
+  ],
+  "homepage": "https://github.com/Dishni/Daralla",
+  "createdAt": "2026-09-20",
+  "updatedAt": "2026-09-20",
+  "readme": "https://github.com/Dishni/Daralla/blob/main/README.md",
+  "image": ""
+}

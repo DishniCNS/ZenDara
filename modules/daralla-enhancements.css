@@ -1,0 +1,62 @@
+/* Daralla — cohesive UX layer */
+:root {
+  --daralla-glass-opacity: .72;
+  --daralla-glass-blur: 18px;
+  --daralla-glass-saturation: 1.15;
+  --daralla-density-gap: 6px;
+  --daralla-compact-sidebar-width: 96px;
+}
+
+/* Unified material. */
+@media (-moz-pref("daralla.material.glass")) {
+  #urlbar-background,
+  .zen-media-card,
+  #zen-sidebar-web-panel,
+  panel:not(#autoscroller),
+  menupopup {
+    backdrop-filter: blur(var(--daralla-glass-blur)) saturate(var(--daralla-glass-saturation)) !important;
+  }
+}
+
+/* Density presets. */
+@media (-moz-pref("daralla.density", 0)) {
+  :root { --daralla-density-gap: 4px; --tab-min-height: 30px; }
+}
+@media (-moz-pref("daralla.density", 1)) {
+  :root { --daralla-density-gap: 6px; }
+}
+@media (-moz-pref("daralla.density", 2)) {
+  :root { --daralla-density-gap: 9px; --tab-min-height: 38px; }
+}
+
+/* Preserve the defining compact geometry when sidebar moves right. */
+:root[zen-right-side="true"]:not([zen-sidebar-expanded="true"]) #navigator-toolbox,
+:root[zen-right-side="true"]:not([zen-sidebar-expanded="true"]) #titlebar {
+  min-width: var(--daralla-compact-sidebar-width) !important;
+  max-width: var(--daralla-compact-sidebar-width) !important;
+}
+
+/* Focus mode: page first, UI returns on interaction. */
+@media (-moz-pref("daralla.focus-mode")) {
+  #navigator-toolbox:not(:hover):not(:focus-within) {
+    opacity: .14 !important;
+    transition: opacity 180ms ease !important;
+  }
+  #navigator-toolbox:hover,
+  #navigator-toolbox:focus-within { opacity: 1 !important; }
+}
+
+/* Essentials feel like a responsive launcher while keeping native Zen behavior. */
+@media (-moz-pref("daralla.essentials.tiles")) {
+  .tabbrowser-tab[zen-essential] .tab-background {
+    transition: transform 160ms ease, filter 160ms ease, background-color 160ms ease !important;
+  }
+  .tabbrowser-tab[zen-essential]:hover .tab-background {
+    transform: scale(1.025) !important;
+    filter: saturate(1.08) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+}
