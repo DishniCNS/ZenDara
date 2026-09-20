@@ -160,7 +160,7 @@
     "property": "daralla.compact-sidebar.hide",
     "label": "Hide compact sidebar on empty tab",
     "value": "boolean",
-    "default": false
+    "defaultValue": false
   },
   {
     "type": "separator"
@@ -170,7 +170,7 @@
     "property": "daralla.compact.sidebar.transparent",
     "label": "Make sidebar transparent in compact mode",
     "value": "boolean",
-    "default": false
+    "defaultValue": false
   },
   {
     "type": "separator"
@@ -180,7 +180,7 @@
     "property": "daralla.contextmenu",
     "label": "Enable glass tint context menu",
     "value": "boolean",
-    "default": false
+    "defaultValue": false
   },
   {
     "type": "separator"
@@ -200,7 +200,7 @@
     "property": "daralla.nogaps.enabled",
     "label": "Enable no gap for single-toolbar",
     "value": "boolean",
-    "default": false
+    "defaultValue": false
   },
   {
     "type": "separator"
@@ -210,7 +210,7 @@
     "property": "daralla.nogaps.border.enabled",
     "label": "Show splitter (for no gaps mod)",
     "value": "boolean",
-    "default": false
+    "defaultValue": false
   },
   {
     "type": "separator"
@@ -220,7 +220,7 @@
     "property": "daralla.pinned-ext.enabled",
     "label": "Enable pinned extensions",
     "value": "boolean",
-    "default": false
+    "defaultValue": false
   },
   {
     "type": "separator"
@@ -230,7 +230,7 @@
     "property": "daralla.trackpad.animation",
     "label": "Enable trackpad animations",
     "value": "boolean",
-    "default": true
+    "defaultValue": true
   },
   {
     "type": "text",
@@ -246,7 +246,6 @@
     "property": "daralla.urlbar.style",
     "label": "Change URL bar style",
     "value": "string",
-    "default": "slim",
     "options": [
       {
         "value": "slim",
@@ -260,7 +259,8 @@
         "value": "full",
         "label": "full"
       }
-    ]
+    ],
+    "defaultValue": "slim"
   },
   {
     "type": "separator"
@@ -270,7 +270,6 @@
     "property": "daralla.urlbar.border_radius",
     "label": "Border radius for urlbar",
     "value": "number",
-    "default": 16,
     "options": [
       {
         "value": 0,
@@ -300,7 +299,8 @@
         "value": 24,
         "label": "24px"
       }
-    ]
+    ],
+    "defaultValue": 16
   },
   {
     "type": "separator"
@@ -318,9 +318,9 @@
   {
     "property": "daralla.urlbar.position.top",
     "label": "Position URL bar at the top (for multiple and collapsed toolbar only)",
-    "default": false,
     "type": "checkbox",
-    "value": "boolean"
+    "value": "boolean",
+    "defaultValue": false
   },
   {
     "type": "separator"
@@ -440,7 +440,7 @@
     "property": "daralla.urlbar.icons.hide",
     "label": "Hide website icons in URL bar results",
     "value": "boolean",
-    "default": true
+    "defaultValue": true
   },
   {
     "type": "separator"
@@ -450,7 +450,7 @@
     "property": "daralla.urlbar.icons.greyscale",
     "label": "Make website icons greyscale in URL bar results",
     "value": "boolean",
-    "default": false
+    "defaultValue": false
   },
   {
     "type": "text",
@@ -572,7 +572,6 @@
     "property": "daralla.blank.theme",
     "label": "Change color scheme for about:blank",
     "value": "number",
-    "default": 0,
     "options": [
       {
         "value": 0,
@@ -586,7 +585,8 @@
         "value": 2,
         "label": "Transparent"
       }
-    ]
+    ],
+    "defaultValue": 0
   },
   {
     "type": "separator"
@@ -676,7 +676,7 @@
     "property": "daralla.new-tab.label",
     "label": "Enable custom new tab label",
     "value": "boolean",
-    "default": true
+    "defaultValue": true
   },
   {
     "type": "separator"
@@ -686,7 +686,7 @@
     "property": "daralla.new-tab.reveal.animation",
     "label": "Enable reveal on hover animation for new tab",
     "value": "boolean",
-    "default": true
+    "defaultValue": true
   },
   {
     "type": "separator"
@@ -696,7 +696,7 @@
     "property": "zen.theme.essentials-favicon-bg",
     "label": "Enable favicon gradient background for essentials",
     "value": "boolean",
-    "default": true
+    "defaultValue": true
   },
   {
     "type": "separator"
@@ -706,7 +706,7 @@
     "property": "daralla.audio.indicator.disable",
     "label": "Disable audio indicator on tab",
     "value": "boolean",
-    "default": false
+    "defaultValue": false
   },
   {
     "type": "separator"
@@ -716,7 +716,7 @@
     "property": "daralla.tab-hover.animation",
     "label": "Enable tab hover animation",
     "value": "boolean",
-    "default": true
+    "defaultValue": true
   },
   {
     "type": "separator"
@@ -726,7 +726,7 @@
     "property": "daralla.tab-icon.invert",
     "label": "Invert tab icon color",
     "value": "boolean",
-    "default": true
+    "defaultValue": true
   },
   {
     "type": "separator"
@@ -906,7 +906,7 @@
     "property": "daralla.macos.border",
     "label": "Enable macOS style border for compact sidebar and other elements",
     "value": "boolean",
-    "default": false
+    "defaultValue": false
   },
   {
     "type": "separator"
@@ -916,7 +916,6 @@
     "property": "daralla.webview.border_radius",
     "label": "Border radius for webview",
     "value": "number",
-    "default": 16,
     "options": [
       {
         "value": 0,
@@ -942,7 +941,8 @@
         "value": 20,
         "label": "20px"
       }
-    ]
+    ],
+    "defaultValue": 16
   },
   {
     "type": "separator"
@@ -952,7 +952,6 @@
     "property": "daralla.window.border_radius",
     "label": "Border radius for window",
     "value": "number",
-    "default": 8,
     "options": [
       {
         "value": 0,
@@ -982,7 +981,8 @@
         "value": 24,
         "label": "24px"
       }
-    ]
+    ],
+    "defaultValue": 8
   },
   {
     "type": "separator"
@@ -1011,7 +1011,6 @@
     "property": "daralla.tab.border_radius",
     "label": "Border radius for tabs",
     "value": "number",
-    "default": 16,
     "options": [
       {
         "value": 0,
@@ -1041,7 +1040,8 @@
         "value": 24,
         "label": "24px"
       }
-    ]
+    ],
+    "defaultValue": 16
   },
   {
     "type": "separator"
@@ -1070,7 +1070,6 @@
     "property": "daralla.essentials.border_radius",
     "label": "Border radius for essentials",
     "value": "number",
-    "default": 16,
     "options": [
       {
         "value": 0,
@@ -1104,7 +1103,8 @@
         "value": 50,
         "label": "Round"
       }
-    ]
+    ],
+    "defaultValue": 16
   },
   {
     "type": "text",
@@ -1177,7 +1177,7 @@
     "property": "daralla.pip.disabled",
     "label": "Disable Picture-in-Picture customization",
     "value": "boolean",
-    "default": false
+    "defaultValue": false
   },
   {
     "type": "separator"
@@ -1187,7 +1187,7 @@
     "property": "daralla.pip.rounded",
     "label": "Enable rounded corners for PiP window",
     "value": "boolean",
-    "default": false
+    "defaultValue": false
   },
   {
     "type": "separator"
@@ -1197,7 +1197,6 @@
     "property": "daralla.pip.border_radius",
     "label": "Border radius for PiP controls",
     "value": "number",
-    "default": 0,
     "options": [
       {
         "value": 0,
@@ -1219,7 +1218,8 @@
         "value": 10,
         "label": "10px"
       }
-    ]
+    ],
+    "defaultValue": 0
   },
   {
     "type": "separator"
@@ -1229,7 +1229,7 @@
     "property": "daralla.pip.blur",
     "label": "Enable blur effect on PiP controls",
     "value": "boolean",
-    "default": false
+    "defaultValue": false
   },
   {
     "type": "text",
@@ -1245,7 +1245,7 @@
     "property": "daralla.player.minimal",
     "label": "Make the Media Player window minimal (pip, volume, and call controls hidden)",
     "value": "boolean",
-    "default": true
+    "defaultValue": true
   },
   {
     "type": "separator"
@@ -1255,7 +1255,7 @@
     "property": "daralla.player.flip",
     "label": "Flipped media player",
     "value": "boolean",
-    "default": false
+    "defaultValue": false
   },
   {
     "type": "text",
