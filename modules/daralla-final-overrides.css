@@ -1,5 +1,5 @@
 /*
- * Daralla 0.3.1 — final visual/geometry layer.
+ * Daralla 0.3.2 — final visual/geometry layer.
  * Loaded last so the requested Daralla behavior wins over legacy Wireframe/Zia rules.
  */
 
@@ -105,9 +105,94 @@
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35) !important;
 }
 
+/* ---------- Zen/Wireframe-style Ctrl+T new-tab overlay ---------- */
+@media (-moz-bool-pref: "daralla.newtab.overlay") {
+  :root[daralla-newtab-overlay="true"]:not([daralla-split="true"]) #urlbar[zen-newtab],
+  :root:not([daralla-split="true"]) #urlbar[zen-newtab] {
+    position: fixed !important;
+    left: 50% !important;
+    top: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: min(680px, calc(100vw - 64px)) !important;
+    min-width: min(680px, calc(100vw - 64px)) !important;
+    max-width: min(680px, calc(100vw - 64px)) !important;
+    margin: 0 !important;
+    transform: translate(-50%, -50%) !important;
+    transform-origin: center !important;
+    z-index: 10001 !important;
+    overflow: visible !important;
+    border-radius: 18px !important;
+  }
+
+  :root:not([daralla-split="true"]) #urlbar[zen-newtab] .urlbar-background {
+    border-radius: 18px !important;
+    background: color-mix(in srgb, var(--toolbar-bgcolor, rgb(30, 30, 32)) 78%, transparent) !important;
+    border: 1px solid color-mix(in srgb, var(--toolbar-textcolor, white) 16%, transparent) !important;
+    box-shadow:
+      0 28px 80px rgba(0, 0, 0, 0.44),
+      0 8px 30px rgba(0, 0, 0, 0.26),
+      inset 0 1px 0 rgba(255, 255, 255, 0.09) !important;
+    backdrop-filter: blur(26px) saturate(1.18) !important;
+  }
+
+  :root:not([daralla-split="true"]) #urlbar[zen-newtab] .urlbar-input-container {
+    height: 58px !important;
+    min-height: 58px !important;
+    padding-inline: 18px !important;
+    border-radius: 18px !important;
+  }
+
+  :root:not([daralla-split="true"]) #urlbar[zen-newtab] .urlbar-input {
+    font-size: 18px !important;
+    font-weight: 500 !important;
+  }
+
+  :root:not([daralla-split="true"]) #urlbar[zen-newtab] .urlbarView {
+    margin-top: 8px !important;
+    border-radius: 16px !important;
+    background: color-mix(in srgb, var(--toolbar-bgcolor, rgb(30, 30, 32)) 88%, transparent) !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35) !important;
+    backdrop-filter: blur(22px) saturate(1.12) !important;
+  }
+}
+
+/* ---------- Truly transparent blank/empty tab ---------- */
+@media (-moz-bool-pref: "daralla.blank.transparent") {
+  :root[daralla-blank-transparent="true"] #browser,
+  :root[daralla-blank-transparent="true"] #zen-tabbox-wrapper,
+  :root[daralla-blank-transparent="true"] #tabbrowser-tabbox,
+  :root[daralla-blank-transparent="true"] #tabbrowser-tabpanels,
+  :root[daralla-blank-transparent="true"] .browserSidebarContainer,
+  :root[daralla-blank-transparent="true"] .browserContainer,
+  :root[daralla-blank-transparent="true"] .browserStack {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+  }
+
+  :root[daralla-blank-transparent="true"] .browserSidebarContainer {
+    border: 0 !important;
+    outline: 0 !important;
+  }
+
+  :root[daralla-blank-transparent="true"] .browserStack::before {
+    display: none !important;
+    content: none !important;
+  }
+}
+
 /* ---------- Blank new tab: remove the legacy artwork ---------- */
 #main-window[zen-has-empty-tab="true"] .browserStack {
   background-image: none !important;
+}
+
+@media (-moz-bool-pref: "daralla.blank.transparent") {
+  #main-window[zen-has-empty-tab="true"] .browserStack {
+    background: transparent !important;
+    background-color: transparent !important;
+  }
 }
 
 #main-window[zen-has-empty-tab="true"] .browserStack::before {

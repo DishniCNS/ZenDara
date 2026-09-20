@@ -1,0 +1,26 @@
+DARALLA 0.3.2 POLISHED BUILD
+===========================
+Source: DishniCNS/ZenDara main
+
+Validated fixes:
+- Removed accidental extra brace from modules/bottombar.css.
+- Fixed invalid box-sizing: none -> border-box.
+- Closed the floating-urlbar single-toolbar media block before URL-bar animations.
+- Fixed invalid max-height: auto -> none.
+- Fixed invalid transition-delay value in blank-page.css.
+- Localized bundled blank-page SVG references; no runtime dependency on raw.githubusercontent.com for those logos.
+- Added final Daralla override layer last in userChrome.css.
+- Disabled centered URL-bar override while Daralla split mode is active.
+- Added Zen/Wireframe-style Ctrl+T new-tab overlay using zen.urlbar.replace-newtab and floating URL-bar behavior.
+- Added explicit true transparency handling for about:blank / Zen empty tabs, including the browser element transparent attribute.
+- Removed native Zen Split View pane headers and buttons from the visual layer.
+- Improved media-card stacking with fade, depth, visible peek content and hover lift.
+- Normalized preferences for Sine 2.3: default -> defaultValue.
+- Added dedicated window-control visibility preference.
+- Added dedicated new-tab overlay and blank transparency preferences.
+- All module CSS files passed brace-balance validation.
+- preferences.json passed JSON parse and duplicate-property checks.
+
+Known runtime limitation:
+This is static validation only. A real Zen Browser GUI session is still required to verify
+OS/platform-specific chrome geometry, compositor rendering and every interaction state.

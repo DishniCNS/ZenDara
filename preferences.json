@@ -1396,5 +1396,19 @@
         "label":  "Hide window controls (minimize, maximize, close)",
         "value":  "boolean",
         "defaultValue":  true
+    },
+    {
+        "type":  "checkbox",
+        "property":  "daralla.newtab.overlay",
+        "label":  "Use Wireframe-style Ctrl+T new-tab overlay",
+        "value":  "boolean",
+        "defaultValue":  true
+    },
+    {
+        "type":  "checkbox",
+        "property":  "daralla.blank.transparent",
+        "label":  "Make blank and empty tabs truly transparent",
+        "value":  "boolean",
+        "defaultValue":  true
     }
 ]
