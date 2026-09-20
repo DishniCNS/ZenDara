@@ -1,0 +1,97 @@
+/* Daralla 1.0.0 — clean design layer
+ * The base is Wireframe 2.0. No web-content geometry is modified here.
+ */
+:root {
+  --daralla-accent: var(--zen-primary-color, rgb(90, 185, 245));
+  --daralla-surface: color-mix(in srgb, var(--toolbar-bgcolor, #202124) 88%, transparent);
+  --daralla-surface-2: color-mix(in srgb, var(--toolbar-bgcolor, #202124) 78%, transparent);
+  --daralla-line: color-mix(in srgb, currentColor 18%, transparent);
+  --daralla-radius: 14px;
+  --daralla-urlbar-width: min(46vw, 720px);
+  --daralla-urlbar-top: clamp(18vh, 34vh, 40vh);
+}
+
+/* Window controls: hidden by default, recoverable by one preference. */
+@media (-moz-bool-pref: "daralla.window-controls.hide") {
+  #titlebar .titlebar-buttonbox-container,
+  #zen-sidebar-top-buttons .titlebar-buttonbox-container,
+  .titlebar-buttonbox-container {
+    visibility: collapse !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    max-width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    pointer-events: none !important;
+  }
+}
+
+/* Remove the native Split View header without moving the actual panes. */
+.zen-view-splitter-header-container,
+.zen-view-splitter-header {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Keep split panes clean and independent. */
+#tabbrowser-tabpanels[zen-split-view="true"] > .browserSidebarContainer[zen-split="true"] {
+  margin-block: 4px !important;
+  border-radius: var(--daralla-radius) !important;
+  box-shadow: 0 1px 14px rgba(0,0,0,.20), inset 0 0 0 1px rgba(255,255,255,.05) !important;
+}
+#tabbrowser-tabpanels[zen-split-view="true"] > .browserSidebarContainer[zen-split="true"] > .browserStack,
+#tabbrowser-tabpanels[zen-split-view="true"] > .browserSidebarContainer[zen-split="true"] browser {
+  border-radius: inherit !important;
+}
+
+/* Center the NORMAL opened URL bar; do not touch the page/webview itself. */
+#urlbar[breakout-extend] {
+  left: 50% !important;
+  right: auto !important;
+  width: var(--daralla-urlbar-width) !important;
+  min-width: var(--daralla-urlbar-width) !important;
+  max-width: var(--daralla-urlbar-width) !important;
+  top: var(--daralla-urlbar-top) !important;
+  bottom: auto !important;
+  margin: 0 !important;
+  transform: translateX(-50%) !important;
+  transform-origin: 50% 50% !important;
+  z-index: 1000 !important;
+  border-radius: var(--daralla-radius) !important;
+}
+#urlbar[breakout-extend] > .urlbar-background {
+  background: var(--daralla-surface) !important;
+  border: 1px solid var(--daralla-line) !important;
+  border-radius: inherit !important;
+  box-shadow: 0 18px 48px rgba(0,0,0,.38) !important;
+  backdrop-filter: blur(18px) saturate(135%) !important;
+}
+
+/* Preserve the browser's native Ctrl+T replacement flow.
+ * We only style the popup, not its lifecycle. */
+#urlbar[zen-newtab][breakout-extend] {
+  top: var(--daralla-urlbar-top) !important;
+}
+#urlbar[zen-newtab][breakout-extend] > .urlbar-background {
+  background: color-mix(in srgb, var(--daralla-accent) 14%, var(--toolbar-bgcolor, #1d1d1f)) !important;
+}
+
+/* Truly transparent empty/blank browser chrome only. */
+:root[zen-has-empty-tab="true"] .browserSidebarContainer:has(browser[transparent="true"]) {
+  background: transparent !important;
+}
+:root[zen-has-empty-tab="true"] .browserSidebarContainer:has(browser[transparent="true"]) .browserStack {
+  background: transparent !important;
+}
+:root[zen-has-empty-tab="true"] .browserSidebarContainer:has(browser[transparent="true"]) browser[transparent="true"] {
+  background: transparent !important;
+}

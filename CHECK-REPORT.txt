@@ -1,0 +1,2 @@
+Daralla 1.0.0 fresh build
+CHECK OK

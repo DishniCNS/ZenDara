@@ -1,40 +1,36 @@
 {
-    "id":  "daralla",
-    "name":  "Daralla",
-    "description":  "Daralla - safe native Zen Ctrl+T overlay, truly transparent empty tabs, no artificial topbar gap, refined sidebars, media and split view without modifying webview layout.",
-    "author":  "Dishni",
-    "version":  "0.3.4",
-    "style":  {
-                  "chrome":  "userChrome.css",
-                  "content":  "userContent.css"
-              },
-    "scripts":  {
-                    "scripts/daralla.uc.js":  {
-                                                  "include":  [
-                                                                  "chrome://browser/content/browser.xhtml"
-                                                              ]
-                                              },
-                    "scripts/daralla-native-newtab.uc.js":  {
-                                                                "include":  [
-                                                                                "chrome://browser/content/browser.xhtml"
-                                                                            ]
-                                                            }
-                },
-    "preferences":  "preferences.json",
-    "tags":  [
-                 "chrome",
-                 "theme",
-                 "adaptive",
-                 "sidebar",
-                 "split-view",
-                 "media"
-             ],
-    "fork":  [
-                 "zen"
-             ],
-    "homepage":  "https://github.com/DishniCNS/ZenDara",
-    "createdAt":  "2026-09-20",
-    "updatedAt":  "2026-09-20",
-    "readme":  "https://github.com/DishniCNS/ZenDara/blob/main/README.md",
-    "image":  ""
+  "id": "daralla",
+  "name": "Daralla",
+  "description": "A fresh Zen Browser theme inspired by Zia and Wireframe 2.0: card-based browser chrome, centered floating URL bar, transparent empty tabs and restrained Split View styling.",
+  "author": "Dishni",
+  "version": "1.0.0",
+  "style": {
+    "chrome": "userChrome.css",
+    "content": "userContent.css"
+  },
+  "scripts": {
+    "scripts/daralla-features.uc.js": {
+      "include": [
+        "chrome://browser/content/browser.xhtml"
+      ]
+    }
+  },
+  "preferences": "preferences.json",
+  "tags": [
+    "chrome",
+    "theme",
+    "wireframe",
+    "zia",
+    "sidebar",
+    "split-view",
+    "urlbar"
+  ],
+  "fork": [
+    "zen"
+  ],
+  "homepage": "https://github.com/DishniCNS/ZenDara",
+  "createdAt": "2026-09-20",
+  "updatedAt": "2026-09-20",
+  "readme": "https://github.com/DishniCNS/ZenDara/blob/main/README.md",
+  "image": ""
 }

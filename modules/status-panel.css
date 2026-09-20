@@ -16,7 +16,7 @@
   padding: 0px !important;
 }
 
-@media (-moz-pref("daralla.statusbar.disable")){
+@media (-moz-pref("wireframe.statusbar.disable")){
   #statuspanel {
     display: none !important;
   }

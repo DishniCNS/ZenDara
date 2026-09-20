@@ -1,7 +1,7 @@
 /* ------------------------- PINNED EXTENSIONS ------------------------- */
 /* Credits to Arc 2.0 */
 
-@media (-moz-pref("daralla.pinned-ext.enabled")) {
+@media (-moz-pref("wireframe.pinned-ext.enabled")) {
 /* Zen >1.12.6b Fix */
 :root[customizing] #TabsToolbar-customization-target {
   visibility: visible !important;

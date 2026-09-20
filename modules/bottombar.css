@@ -12,14 +12,14 @@
 
 @media not (-moz-pref("zen.view.use-single-toolbar")) {
   /* URL bar position preference - TOP */
-@media (-moz-bool-pref: "daralla.urlbar.position.top") {
+@media (-moz-bool-pref: "wireframe.urlbar.position.top") {
   #zen-appcontent-wrapper {
     flex-direction: column;
   }
 }
 
 /* URL bar position preference - BOTTOM (default) */
-@media not (-moz-bool-pref: "daralla.urlbar.position.top") {
+@media not (-moz-bool-pref: "wireframe.urlbar.position.top") {
     #zen-appcontent-wrapper {
       flex-direction: column-reverse;
     }
@@ -62,7 +62,7 @@
 }
 
 /* padding for controls reverse */
-@media (-moz-pref("daralla.controls.reverse")){
+@media (-moz-pref("wireframe.controls.reverse")){
   :root:not([zen-single-toolbar="true"]){
     #zen-appcontent-navbar-wrapper{
       padding-right: 10px !important;
@@ -73,7 +73,7 @@
 /* ====== BOTTOMBAR REVEAL ON HOVER ====== */
 
 @media not (-moz-pref("zen.view.use-single-toolbar")) {
-  @media (-moz-pref("daralla.toolbar.hide")) {
+  @media (-moz-pref("wireframe.toolbar.hide")) {
     #zen-appcontent-navbar-container #identity-box,
     #zen-appcontent-navbar-container #page-action-buttons,
     #zen-appcontent-navbar-container #zen-copy-url-button,
@@ -110,8 +110,8 @@
 }
 
 /* fix for hidden navigation icons in collapsed toolbar */
-@media (-moz-pref("daralla.urlbar.position.top")){
-  @media (-moz-pref("daralla.controls.reverse")){
+@media (-moz-pref("wireframe.urlbar.position.top")){
+  @media (-moz-pref("wireframe.controls.reverse")){
     :root:not([zen-single-toolbar="true"]) #nav-bar{
       margin-left: 10px !important;
       width: calc(100% + var(--zen-toolbox-max-width) - var(--zen-element-separation) - 60px) !important;

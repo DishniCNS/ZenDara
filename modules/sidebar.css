@@ -29,8 +29,8 @@
 }
 
 /* === Border between sidebar and webview for nogaps mod */
-@media (-moz-pref("daralla.nogaps.enabled")){
-    @media (-moz-pref("daralla.nogaps.border.enabled")){
+@media (-moz-pref("wireframe.nogaps.enabled")){
+    @media (-moz-pref("wireframe.nogaps.border.enabled")){
         :root:not([zen-right-side],[zen-compact-mode="true"])[zen-sidebar-expanded="true"] #zen-sidebar-splitter {
           border-right: 2px solid var(--na-color-border) !important;
         }
@@ -43,7 +43,7 @@
 
 
 @media (-moz-pref("zen.view.use-single-toolbar")) {
-  @media not (-moz-bool-pref: "daralla.urlbar.position.top"){
+  @media not (-moz-bool-pref: "wireframe.urlbar.position.top"){
     #zen-appcontent-navbar-wrapper::before {
       content: "";
       position: absolute;
@@ -62,7 +62,7 @@
     }
 
     /* auto hide top sidebar toolbar ALONG WITH menu button */
-  @media (-moz-pref("daralla.toolbar.hide")){
+  @media (-moz-pref("wireframe.toolbar.hide")){
     #zen-sidebar-top-buttons>#zen-sidebar-top-buttons-customization-target>* {
       opacity: 0 !important;
       transition: opacity var(--na-anim-duration) normal !important;
@@ -130,7 +130,7 @@
   margin-bottom: 6px !important;
 }
 
-@media not (-moz-pref("daralla.urlbar.position.top")){
+@media not (-moz-pref("wireframe.urlbar.position.top")){
   :root:not([zen-single-toolbar="true"])[zen-compact-mode="true"] #navigator-toolbox{
     height: calc(100% - 56px) !important;
     margin-top: 0 !important;
@@ -149,7 +149,7 @@
   }
 }
 
-@media (-moz-pref("daralla.urlbar.position.top")){
+@media (-moz-pref("wireframe.urlbar.position.top")){
   :root:not([zen-single-toolbar="true"])[zen-compact-mode="true"] #navigator-toolbox{
     height: calc(100% - 56px) !important;
     margin-top: 0 !important;
@@ -169,8 +169,8 @@
 
 /* ==== COMPACT SIDEBAR - SINGLE-TOOLBAR ==== */
 
-@media(-moz-pref("daralla.floating-compact-sidebar.enabled")){
-  @media not (-moz-pref("daralla.urlbar.position.top")){
+@media(-moz-pref("wireframe.floating-compact-sidebar.enabled")){
+  @media not (-moz-pref("wireframe.urlbar.position.top")){
     :root[zen-single-toolbar="true"][zen-compact-mode="true"] #navigator-toolbox{
       height: calc(100% - 24px) !important;
       margin-top: 0 !important;
@@ -189,7 +189,7 @@
     }
   }
 
-  @media (-moz-pref("daralla.urlbar.position.top")){
+  @media (-moz-pref("wireframe.urlbar.position.top")){
     :root[zen-single-toolbar="true"][zen-compact-mode="true"] #navigator-toolbox{
       height: calc(100% - 24px) !important;
       margin-top: 0 !important;
@@ -217,7 +217,7 @@
 
 /* Hide tabbar when there are no active tabs */
 /* Credits to ivaon */
-@media (-moz-pref("daralla.compact-sidebar.hide")){
+@media (-moz-pref("wireframe.compact-sidebar.hide")){
   :root[zen-compact-mode="true"] {
     @media -moz-pref('zen.view.compact.hide-tabbar') or -moz-pref('zen.view.use-single-toolbar') {
       &:not([zen-compact-animating]) {
@@ -257,7 +257,7 @@
   border-radius: var(--na-user-border-radius) !important;
 }
 
-/* @media not (-moz-bool-pref: "daralla.urlbar.position.top"){
+/* @media not (-moz-bool-pref: "wireframe.urlbar.position.top"){
   #titlebar{
     padding-top: 10px !important;
   }
@@ -265,7 +265,7 @@
 
 /* === WORKSPACE INDICATOR REVEAL ON HOVER === */
 
-@media (-moz-pref("daralla.workspace.icon.hide")){
+@media (-moz-pref("wireframe.workspace.icon.hide")){
     #titlebar .zen-current-workspace-indicator-stack {
       visibility: collapse !important;
       opacity: 0.0 !important;
@@ -277,7 +277,7 @@
     }
     
     #titlebar .zen-current-workspace-indicator > label{
-      font-size: var(--daralla-font-size) !important;
+      font-size: var(--wireframe-font-size) !important;
       transition: margin-left 0.26s cubic-bezier(.25,.8,.25,1) !important;
     }
     
@@ -349,7 +349,7 @@
 
 /* === SIDEBAR FOOT BUTTON REVEAL ON HOVER === */
 
-@media (-moz-pref("daralla.sidebar-foot.hide")) {
+@media (-moz-pref("wireframe.sidebar-foot.hide")) {
 
     #zen-sidebar-foot-buttons {
       opacity: 0 !important;
@@ -368,7 +368,7 @@
     }
   
   /* media player shift */
-  @media(-moz-pref("daralla.workspace-switch.fan")){
+  @media(-moz-pref("wireframe.workspace-switch.fan")){
     #zen-media-controls-toolbar{
       transform: translateY(48px) !important;
       transition: transform 0.15s ease !important;
@@ -379,7 +379,7 @@
     }
   }
   
-  @media not (-moz-pref("daralla.workspace-switch.fan")){
+  @media not (-moz-pref("wireframe.workspace-switch.fan")){
     #zen-media-controls-toolbar{
       transform: translateY(42px) !important;
       transition: transform 0.15s ease !important;
@@ -400,7 +400,7 @@
 
 /* === Changed new tab label === */
 
-@media (-moz-pref("daralla.new-tab.label")){
+@media (-moz-pref("wireframe.new-tab.label")){
   #tabs-newtab-button .toolbarbutton-text::before {
     content: "Where to?"; 
   }
@@ -412,7 +412,7 @@
 
 /* === NEW TAB REVEAL ON HOVER ANIMATION === */
 
-@media (-moz-pref("daralla.new-tab.reveal.animation")){
+@media (-moz-pref("wireframe.new-tab.reveal.animation")){
   /* Base hidden state */
   #tabs-newtab-button:not([in-urlbar="true"]) .toolbarbutton-text {
     opacity: 0 !important;
@@ -459,7 +459,7 @@
 
 /* === macos border for compact sidebar === */
 
-@media (-moz-pref("daralla.macos.border")){
+@media (-moz-pref("wireframe.macos.border")){
   :root[zen-compact-mode="true"] #titlebar{
     border: none !important;
   }
@@ -486,7 +486,7 @@
 }
 
 /* tabs hover animation */
-@media (-moz-bool-pref:"daralla.tab-hover.animation"){
+@media (-moz-bool-pref:"wireframe.tab-hover.animation"){
   .tabbrowser-tab:hover .tab-label-container,
   .tabbrowser-tab:hover .tab-icon-stack {
     animation: slideUpAdressBar var(--na-anim-duration) ease;
@@ -506,7 +506,7 @@
 } */
 
 /* invert selected tab icon img */
-@media (-moz-bool-pref:"daralla.tab-icon.invert"){
+@media (-moz-bool-pref:"wireframe.tab-icon.invert"){
   .tabbrowser-tab[selected]:not([zen-essential]) img {
     filter: invert(100%) sepia(100%) brightness(120%) contrast(100%);
   }
@@ -645,7 +645,7 @@ zen-folder {
 }
 
 /* Pref to disable navigation buttons */
-@media (-moz-pref("daralla.navigation.hide")){
+@media (-moz-pref("wireframe.navigation.hide")){
   #back-button{
     display: none !important;
   }
@@ -661,7 +661,7 @@ zen-folder {
 }
  */
 /* === TRANSPARENT COMPACT SIDEBAR === */
-@media (-moz-pref("daralla.compact.sidebar.transparent")) {
+@media (-moz-pref("wireframe.compact.sidebar.transparent")) {
 
   /* blur layer moved to actual background container */
   :root[zen-compact-mode="true"] #zen-toolbar-background::before {
@@ -691,7 +691,7 @@ zen-folder {
 }
 
 /* === FOLDER STYLING === */
-@media (-moz-pref("daralla.folders","border")){
+@media (-moz-pref("wireframe.folders","border")){
   zen-folder {
     border-radius: var(--na-tab-border-radius) !important;
     position: relative !important; /* needed for the outline pseudo */
@@ -705,7 +705,7 @@ zen-folder {
   }
 }
 
-@media (-moz-pref("daralla.folders","background")){
+@media (-moz-pref("wireframe.folders","background")){
   zen-folder {
     border-radius: var(--na-tab-border-radius) !important;
     position: relative !important; /* needed for the outline pseudo */
@@ -721,43 +721,43 @@ zen-folder {
 /* ======= MEDIA QUERIES FOR PREFERENCES ======== */
 
 /* Pref for tab and folder border radius */
-@media (-moz-pref("daralla.tab.border_radius",0)){
+@media (-moz-pref("wireframe.tab.border_radius",0)){
   :root{
     --na-tab-border-radius: 0px !important;
   }
 }
 
-@media (-moz-pref("daralla.tab.border_radius",4)){
+@media (-moz-pref("wireframe.tab.border_radius",4)){
   :root{
     --na-tab-border-radius: 4px !important;
   }
 }
 
-@media (-moz-pref("daralla.tab.border_radius",8)){
+@media (-moz-pref("wireframe.tab.border_radius",8)){
   :root{
     --na-tab-border-radius: 8px !important;
   }
 }
 
-@media (-moz-pref("daralla.tab.border_radius",12)){
+@media (-moz-pref("wireframe.tab.border_radius",12)){
   :root{
     --na-tab-border-radius: 12px !important;
   }
 }
 
-@media (-moz-pref("daralla.tab.border_radius",16)){
+@media (-moz-pref("wireframe.tab.border_radius",16)){
   :root{
     --na-tab-border-radius: 16px !important;
   }
 }
 
-@media (-moz-pref("daralla.tab.border_radius",20)){
+@media (-moz-pref("wireframe.tab.border_radius",20)){
   :root{
     --na-tab-border-radius: 20px !important;
   }
 }
 
-@media (-moz-pref("daralla.tab.border_radius",24)){
+@media (-moz-pref("wireframe.tab.border_radius",24)){
   :root{
     --na-tab-border-radius: 24px !important;
   }
@@ -765,49 +765,49 @@ zen-folder {
 
 /* Pref for essentials border radius */
 
-@media (-moz-pref("daralla.essentials.border_radius",0)){
+@media (-moz-pref("wireframe.essentials.border_radius",0)){
   :root{
     --na-essen-border-radius: 0px !important;
   }
 }
 
-@media (-moz-pref("daralla.essentials.border_radius",4)){
+@media (-moz-pref("wireframe.essentials.border_radius",4)){
   :root{
     --na-essen-border-radius: 4px !important;
   }
 }
 
-@media (-moz-pref("daralla.essentials.border_radius",8)){
+@media (-moz-pref("wireframe.essentials.border_radius",8)){
   :root{
     --na-essen-border-radius: 8px !important;
   }
 }
 
-@media (-moz-pref("daralla.essentials.border_radius",12)){
+@media (-moz-pref("wireframe.essentials.border_radius",12)){
   :root{
     --na-essen-border-radius: 12px !important;
   }
 }
 
-@media (-moz-pref("daralla.essentials.border_radius",16)){
+@media (-moz-pref("wireframe.essentials.border_radius",16)){
   :root{
     --na-essen-border-radius: 16px !important;
   }
 }
 
-@media (-moz-pref("daralla.essentials.border_radius",20)){
+@media (-moz-pref("wireframe.essentials.border_radius",20)){
   :root{
     --na-essen-border-radius: 20px !important;
   }
 }
 
-@media (-moz-pref("daralla.essentials.border_radius",24)){
+@media (-moz-pref("wireframe.essentials.border_radius",24)){
   :root{
     --na-essen-border-radius: 24px !important;
   }
 }
 
-@media (-moz-pref("daralla.essentials.border_radius",50)){
+@media (-moz-pref("wireframe.essentials.border_radius",50)){
   :root{
     --na-essen-border-radius: 100px !important;
   }

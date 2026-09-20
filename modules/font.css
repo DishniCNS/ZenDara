@@ -1,24 +1,24 @@
 :root {
-    --daralla-font-size: unset;
+    --wireframe-font-size: unset;
 }
 
 /* Credits to Ferrocene */
 
-@media (-moz-pref("daralla.font", "SF-Pro")) {
+@media (-moz-pref("wireframe.font", "SF-Pro")) {
     :root {
-        --daralla-font: "SF-Pro";
+        --wireframe-font: "SF-Pro";
     }
 }
 
-@media (-moz-pref("daralla.font", "SUSE")) {
+@media (-moz-pref("wireframe.font", "SUSE")) {
     :root {
-        --daralla-font: "SUSE";
+        --wireframe-font: "SUSE";
     }
 }
 
-@media (-moz-pref("daralla.font", "SUSEMono")) {
+@media (-moz-pref("wireframe.font", "SUSEMono")) {
     :root {
-        --daralla-font: "SUSEMono";
+        --wireframe-font: "SUSEMono";
     }
     
     #titlebar .zen-current-workspace-indicator > label{
@@ -26,15 +26,15 @@
     }
 }
 
-@media (-moz-pref("daralla.font", "Bricolage")) {
+@media (-moz-pref("wireframe.font", "Bricolage")) {
     :root {
-        --daralla-font: "Bricolage";
+        --wireframe-font: "Bricolage";
     }
 }
 
-@media (-moz-pref("daralla.font", "GeistMono")) {
+@media (-moz-pref("wireframe.font", "GeistMono")) {
     :root {
-        --daralla-font: "GeistMono";
+        --wireframe-font: "GeistMono";
     }
     
     #titlebar .zen-current-workspace-indicator > label{
@@ -42,9 +42,9 @@
     }
 }
 
-@media (-moz-pref("daralla.font", "JetBrainsMono")) {
+@media (-moz-pref("wireframe.font", "JetBrainsMono")) {
     :root {
-        --daralla-font: "JetBrainsMono";
+        --wireframe-font: "JetBrainsMono";
     }
     
     #titlebar .zen-current-workspace-indicator > label{
@@ -52,66 +52,66 @@
     }
 }
 
-@media (-moz-pref("daralla.font", "Monocraft")) {
+@media (-moz-pref("wireframe.font", "Monocraft")) {
     :root {
-        --daralla-font: "Monocraft";
+        --wireframe-font: "Monocraft";
     }
 }
 
 @font-face {
     font-family: "SF-Pro";
     src: url("https://github.com/SehajveerSingh2005/zen-wireframe-2.0/raw/refs/heads/main/fonts/SF-Pro.ttf");
-    font-weight: var(--daralla-font_weight) !important;
+    font-weight: var(--wireframe-font_weight) !important;
 }
 
 @font-face {
     font-family: "SUSE";
     src: url("https://github.com/SehajveerSingh2005/zen-wireframe-2.0/raw/refs/heads/main/fonts/SUSE-Regular.ttf");
-    font-weight: var(--daralla-font_weight) !important;
+    font-weight: var(--wireframe-font_weight) !important;
     font-style: normal;
 }
 
 @font-face {
     font-family: "SUSEMono";
     src: url("https://github.com/SehajveerSingh2005/zen-wireframe-2.0/raw/refs/heads/main/fonts/SUSEMono-Regular.ttf");
-    font-weight: var(--daralla-font_weight) !important;
+    font-weight: var(--wireframe-font_weight) !important;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Bricolage";
     src: url("https://github.com/SehajveerSingh2005/zen-wireframe-2.0/raw/refs/heads/main/fonts/BricolageGrotesque-Regular.ttf");
-    font-weight: var(--daralla-font_weight) !important;
+    font-weight: var(--wireframe-font_weight) !important;
     font-style: normal;
 }
 
 @font-face {
     font-family: "GeistMono";
     src: url("https://github.com/SehajveerSingh2005/zen-wireframe-2.0/raw/refs/heads/main/fonts/GeistMono-Regular.ttf");
-    font-weight: var(--daralla-font_weight) !important;
+    font-weight: var(--wireframe-font_weight) !important;
     font-style: normal;
 }
 
 @font-face {
     font-family: "JetBrainsMono";
     src: url("https://github.com/SehajveerSingh2005/zen-wireframe-2.0/raw/refs/heads/main/fonts/JetBrainsMono-Regular.ttf");
-    font-weight: var(--daralla-font_weight) !important;
+    font-weight: var(--wireframe-font_weight) !important;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Monocraft";
     src: url("https://github.com/SehajveerSingh2005/zen-wireframe-2.0/raw/refs/heads/main/fonts/Monocraft.ttf");
-    font-weight: var(--daralla-font_weight) !important;
+    font-weight: var(--wireframe-font_weight) !important;
     font-style: normal;
 }
 
 * {
-    font-weight: var(--daralla-font_weight) !important;
-    font-family: var(--daralla-font);
+    font-weight: var(--wireframe-font_weight) !important;
+    font-family: var(--wireframe-font);
 }
 
 .tab-text,
 .tab-group-label{
-    font-size: var(--daralla-font-size) !important;
+    font-size: var(--wireframe-font-size) !important;
 }

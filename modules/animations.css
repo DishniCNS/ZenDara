@@ -1,7 +1,7 @@
 /* === ANIMATION === */
 
 /* === ZEN WORKSPACE SWITCHER — POLISHED FAN === */
-@media (-moz-pref("daralla.workspace-switch.fan")) {
+@media (-moz-pref("wireframe.workspace-switch.fan")) {
 
   /* =========================================================
      2. BASE HUB
@@ -157,7 +157,7 @@
 
 /* === TAB SWITCHING ANIMATIONS === */
 
-@media (-moz-pref("daralla.tab-switch.animation","Vertical Veil")){
+@media (-moz-pref("wireframe.tab-switch.animation","Vertical Veil")){
   #browser #tabbrowser-tabpanels:not([zen-split-view="true"]) > .browserSidebarContainer {
     opacity: 0 !important;
     mask-image: linear-gradient(to bottom, transparent 0%, black 60%);
@@ -175,7 +175,7 @@
   }
 }
 
-@media (-moz-pref("daralla.tab-switch.animation","Clean Sever")){
+@media (-moz-pref("wireframe.tab-switch.animation","Clean Sever")){
   #browser #tabbrowser-tabpanels:not([zen-split-view="true"]) > .browserSidebarContainer {
     opacity: 0;
     transform: translateX(32px) scale(1.04);
@@ -195,7 +195,7 @@
 
 }
 
-@media(-moz-pref("daralla.tab-switch.animation","Blurry Dreams")){
+@media(-moz-pref("wireframe.tab-switch.animation","Blurry Dreams")){
   #browser #tabbrowser-tabpanels:not([zen-split-view="true"]) > .browserSidebarContainer {
     opacity: 0 !important;
     filter: blur(10px) saturate(0.8);
@@ -213,7 +213,7 @@
   }
 }
 
-@media (-moz-pref("daralla.tab-switch.animation","Prism Shatter")){
+@media (-moz-pref("wireframe.tab-switch.animation","Prism Shatter")){
   #browser #tabbrowser-tabpanels:not([zen-split-view="true"]) > .browserSidebarContainer {
     opacity: 0;
     transform: scale(1.07) translateY(-6px);
@@ -230,7 +230,7 @@
   }
 }
 
-@media (-moz-pref("daralla.tab-switch.animation","Hard Cut")){
+@media (-moz-pref("wireframe.tab-switch.animation","Hard Cut")){
   #browser #tabbrowser-tabpanels:not([zen-split-view="true"]) > .browserSidebarContainer {
     opacity: 0;
     filter: brightness(60%) contrast(200%);
@@ -247,7 +247,7 @@
   }
 }
 
-@media (-moz-pref("daralla.tab-switch.animation","Monolith Slide")){
+@media (-moz-pref("wireframe.tab-switch.animation","Monolith Slide")){
   #browser #tabbrowser-tabpanels:not([zen-split-view="true"]) > .browserSidebarContainer {
     opacity: 0;
     transform: translateX(-20px) scale(1.02);
@@ -264,7 +264,7 @@
   }
 }
 
-@media (-moz-pref("daralla.tab-switch.animation","Film Dissolve")){
+@media (-moz-pref("wireframe.tab-switch.animation","Film Dissolve")){
   #browser #tabbrowser-tabpanels:not([zen-split-view="true"]) > .browserSidebarContainer {
     opacity: .6 !important;
     filter: blur(2px) contrast(.8) !important;
@@ -297,7 +297,7 @@
 /* === LOAD BAR === */ 
 /* Credits to Tanay-Kar */
 
-@media (-moz-pref("daralla.tab-loading.animation", "loadbar")){
+@media (-moz-pref("wireframe.tab-loading.animation", "loadbar")){
   @-moz-document url-prefix("chrome:") {
     .browserSidebarContainer.deck-selected::before {
       content: "";
@@ -366,7 +366,7 @@
 
 /* === TAB LOADING TAB-BACKGROUND EFFECT === */
 
-@media (-moz-pref("daralla.tab-loading.animation", "tab-bg-loading")){
+@media (-moz-pref("wireframe.tab-loading.animation", "tab-bg-loading")){
   /* progress fill layer */
   .tabbrowser-tab[busy] .tab-background {
     background: var(--tab-selected-bgcolor);
@@ -384,7 +384,7 @@
 }
 
 /* === COMBINED TAB LOADING ANIMATIONS === */
-@media (-moz-pref("daralla.tab-loading.animation", "both")){
+@media (-moz-pref("wireframe.tab-loading.animation", "both")){
   @-moz-document url-prefix("chrome:") {
     .browserSidebarContainer.deck-selected::before {
       content: "";

@@ -9,8 +9,8 @@
   }
   /* single-toolbar */
   /* style - full, normal */
-  @media (-moz-pref("daralla.urlbar.style","full")){
-    @media not (-moz-bool-pref:"daralla.urlbar.position.top"){
+  @media (-moz-pref("wireframe.urlbar.style","full")){
+    @media not (-moz-bool-pref:"wireframe.urlbar.position.top"){
       #urlbar[open]{
         left: 23.25% !important;
         top: auto !important;
@@ -26,8 +26,8 @@
   }
   
   /* style - slim, normal */
-  @media (-moz-pref("daralla.urlbar.style","slim")){
-    @media not (-moz-bool-pref:"daralla.urlbar.position.top"){
+  @media (-moz-pref("wireframe.urlbar.style","slim")){
+    @media not (-moz-bool-pref:"wireframe.urlbar.position.top"){
       #urlbar[open]{
         left: 23.25% !important;
         top: auto !important;

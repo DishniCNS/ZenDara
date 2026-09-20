@@ -22,7 +22,7 @@
 }
 
 /* ====== FLOATING TRANSPARENT URLBAR ====== */
-@media (-moz-pref("daralla.urlbar.blurred")) {
+@media (-moz-pref("wireframe.urlbar.blurred")) {
   #urlbar[zen-floating-urlbar="true"][breakout-extend="true"] > .urlbar-background {
     background: color-mix(
       in srgb,
@@ -45,7 +45,7 @@
     }
 }
 
-@media (-moz-pref("daralla.urlbar.blurred")) {
+@media (-moz-pref("wireframe.urlbar.blurred")) {
 
   /* DARK MODE */
   :root[zen-should-be-dark-mode="true"] #urlbar[open] {
@@ -62,13 +62,13 @@
   }
 }
 
-@media (-moz-pref("daralla.urlbar.border","wireframe")){
+@media (-moz-pref("wireframe.urlbar.border","wireframe")){
   #urlbar[zen-floating-urlbar="true"] {
   --zen-urlbar-background: var(--zen-main-browser-background) !important;
   }
 }
 
-@media (-moz-pref("daralla.urlbar.border","macos")){
+@media (-moz-pref("wireframe.urlbar.border","macos")){
 #urlbar[open]{ 
   box-shadow: 
     /* --- corner mask: prevents edge halo bleeding --- */ 
@@ -113,7 +113,7 @@
 
 /* URLBAR loading text */
 
-@media (-moz-pref("daralla.urlbar-loading.text")){
+@media (-moz-pref("wireframe.urlbar-loading.text")){
   #urlbar>.urlbar-input-container>.urlbar-input-box::before {
     content: "wireframing..." !important;
     padding-inline: 10px !important;
@@ -176,26 +176,13 @@
 } */
 
 /* Hard Shift */
-@media (-moz-pref("daralla.urlbar-focus.effect","Hard Shift")) {
-  #zen-tabbox-wrapper {
-    transition:
-      transform 0.12s cubic-bezier(0.6, 0, 0.4, 1),
-      filter 0.12s linear,
-      opacity 0.12s linear;
-    transform-origin: center;
-  }
-
-  :root:has(#urlbar[open]) #zen-tabbox-wrapper {
-    transform: scale(0.97) translateZ(0);
-    opacity: 0.82;
-    filter: brightness(0.95) contrast(1.15);
-  }
-
+@media (-moz-pref("wireframe.urlbar-focus.effect","Hard Shift")) {
+  /* Daralla: no page transform while URL bar is open. */
 }
 
 
 /* Lights off */
-@media (-moz-pref("daralla.urlbar-focus.effect","Lights Off")){
+@media (-moz-pref("wireframe.urlbar-focus.effect","Lights Off")){
   :root:has(#urlbar[open]) #zen-tabbox-wrapper {
     transform: scale(0.985);
     opacity: 0.94;
@@ -205,7 +192,7 @@
 
 
 /* Pushed away */
-@media (-moz-pref("daralla.urlbar-focus.effect","Pushed Away")){
+@media (-moz-pref("wireframe.urlbar-focus.effect","Pushed Away")){
   :root:has(#urlbar[open]) #zen-tabbox-wrapper {
     transform: rotateY(6deg) scale(0.97);
     opacity: 0.88;
@@ -214,7 +201,7 @@
 }
 
 /* Soft Fade */
-@media (-moz-pref("daralla.urlbar-focus.effect","Soft Fade")){
+@media (-moz-pref("wireframe.urlbar-focus.effect","Soft Fade")){
   :root:has(#urlbar[open]) #zen-tabbox-wrapper {
     transform: scale(0.98);
     opacity: 0.85;
@@ -224,7 +211,7 @@
 
 
 /* Film Grain Blur */
-@media (-moz-pref("daralla.urlbar-focus.effect","Film Grain Blur")){
+@media (-moz-pref("wireframe.urlbar-focus.effect","Film Grain Blur")){
   :root:has(#urlbar[open]) #zen-tabbox-wrapper {
     transform: scale(0.97);
     opacity: 0.9;
@@ -233,7 +220,7 @@
 }
 
 /* FLASH BANG */
-@media (-moz-pref("daralla.urlbar-focus.effect","Flash Bang")){
+@media (-moz-pref("wireframe.urlbar-focus.effect","Flash Bang")){
   :root:has(#urlbar[open]) #zen-tabbox-wrapper {
     animation: nullBlink 0.18s ease-in-out;
   }
@@ -245,7 +232,7 @@
 }
 
 /* CRT Snap */
-@media (-moz-pref("daralla.urlbar-focus.effect","CRT Snap")){
+@media (-moz-pref("wireframe.urlbar-focus.effect","CRT Snap")){
   #zen-tabbox-wrapper {
     will-change: transform, opacity;
     transition:
@@ -267,14 +254,14 @@
 
 /* tabbox content border radius change based on gap */
 :root:has(#urlbar[open]){
-  @media not (-moz-pref("daralla.nogaps.enabled")){
+  @media not (-moz-pref("wireframe.nogaps.enabled")){
   #tabbrowser-tabpanels > hbox{
     border-radius: var(--na-user-border-radius) !important;
     transition: border-radius 0.18s linear !important;
   }
 }
 
-  @media (-moz-pref("daralla.nogaps.enabled")){
+  @media (-moz-pref("wireframe.nogaps.enabled")){
     #tabbrowser-tabpanels > hbox{
       border-radius: var(--na-window-border-radius) !important;
       transition: border-radius 0.18s linear !important;
@@ -317,7 +304,7 @@
   } */
 
   /* SLIM */
-  @media (-moz-pref("daralla.urlbar.style","slim")){
+  @media (-moz-pref("wireframe.urlbar.style","slim")){
   /* move the navbar out from sidebar so url can have the same bahavior as other toolbar mode */
     [zen-compact-mode="true"] {
       #urlbar-container:has(#urlbar[open]) {
@@ -360,7 +347,7 @@
       animation: slideFromBottomfloat 0.18s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
     } */
 
-    @media (-moz-pref("daralla.urlbar.position.top")) {
+    @media (-moz-pref("wireframe.urlbar.position.top")) {
       #urlbar[open] {
         min-width: var(--na-urlbar-width) !important;
         max-width: var(--na-urlbar-width) !important;
@@ -424,7 +411,7 @@
         order: 1 !important;
     }
 
-    @media (-moz-pref("daralla.urlbar.position.top")){
+    @media (-moz-pref("wireframe.urlbar.position.top")){
       #urlbar > .urlbar-input-container {
         order: 0 !important;
       }
@@ -473,14 +460,14 @@
     } */
 
     /* Hide/style website icons based on preferences */
-    @media (-moz-bool-pref: "daralla.urlbar.icons.hide") {
+    @media (-moz-bool-pref: "wireframe.urlbar.icons.hide") {
       #urlbar-container:has(#urlbar[breakout-extend]) #urlbar-results img {
         display: none !important;
       }
     }
 
-    @media not (-moz-bool-pref: "daralla.urlbar.icons.hide") {
-      @media (-moz-bool-pref: "daralla.urlbar.icons.greyscale") {
+    @media not (-moz-bool-pref: "wireframe.urlbar.icons.hide") {
+      @media (-moz-bool-pref: "wireframe.urlbar.icons.greyscale") {
         #urlbar-container:has(#urlbar[breakout-extend]) #urlbar-results img {
           filter: grayscale(100%) !important;
         }
@@ -594,7 +581,7 @@
   }
 
   /* SLIM CENTER */
-    @media (-moz-pref("daralla.urlbar.style","slim(center)")){
+    @media (-moz-pref("wireframe.urlbar.style","slim(center)")){
     /* move the navbar out from sidebar so url can have the same bahavior as other toolbar mode */
     [zen-compact-mode="true"] {
       #urlbar-container:has(#urlbar[open]) {
@@ -793,14 +780,14 @@
     } */
 
     /* Hide/style website icons based on preferences */
-    @media (-moz-bool-pref: "daralla.urlbar.icons.hide") {
+    @media (-moz-bool-pref: "wireframe.urlbar.icons.hide") {
       #urlbar-container:has(#urlbar[breakout-extend]) #urlbar-results img {
         display: none !important;
       }
     }
 
-    @media not (-moz-bool-pref: "daralla.urlbar.icons.hide") {
-      @media (-moz-bool-pref: "daralla.urlbar.icons.greyscale") {
+    @media not (-moz-bool-pref: "wireframe.urlbar.icons.hide") {
+      @media (-moz-bool-pref: "wireframe.urlbar.icons.greyscale") {
         #urlbar-container:has(#urlbar[breakout-extend]) #urlbar-results img {
           filter: grayscale(100%) !important;
         }
@@ -914,7 +901,7 @@
   }
 
   /* FULL */
-  @media (-moz-pref("daralla.urlbar.style","full")){
+  @media (-moz-pref("wireframe.urlbar.style","full")){
     #urlbar[open] {
       min-width: var(--na-urlbar-width) !important;
       max-width: var(--na-urlbar-width) !important;
@@ -933,14 +920,14 @@
     }
 
     /* Hide/style website icons based on preferences */
-    @media (-moz-bool-pref: "daralla.urlbar.icons.hide") {
+    @media (-moz-bool-pref: "wireframe.urlbar.icons.hide") {
       #urlbar-container:has(#urlbar[breakout-extend]) #urlbar-results img {
         display: none !important;
       }
     }
 
-    @media not (-moz-bool-pref: "daralla.urlbar.icons.hide") {
-      @media (-moz-bool-pref: "daralla.urlbar.icons.greyscale") {
+    @media not (-moz-bool-pref: "wireframe.urlbar.icons.hide") {
+      @media (-moz-bool-pref: "wireframe.urlbar.icons.greyscale") {
         #urlbar-container:has(#urlbar[breakout-extend]) #urlbar-results img {
           filter: grayscale(100%) !important;
         }
@@ -952,7 +939,7 @@
 /* single toolbar */
 #navigator-toolbox:has(#urlbar[zen-floating-urlbar="true"]) {
 
-  @media (-moz-pref("daralla.urlbar.style","slim")){
+  @media (-moz-pref("wireframe.urlbar.style","slim")){
   /* move the navbar out from sidebar so url can have the same bahavior as other toolbar mode */
     [zen-compact-mode="true"] {
       #urlbar-container:has(#urlbar[open]) {
@@ -1084,14 +1071,14 @@
     } */
 
     /* Hide/style website icons based on preferences */
-    @media (-moz-bool-pref: "daralla.urlbar.icons.hide") {
+    @media (-moz-bool-pref: "wireframe.urlbar.icons.hide") {
       #urlbar-container:has(#urlbar[breakout-extend]) #urlbar-results img {
         display: none !important;
       }
     }
 
-    @media not (-moz-bool-pref: "daralla.urlbar.icons.hide") {
-      @media (-moz-bool-pref: "daralla.urlbar.icons.greyscale") {
+    @media not (-moz-bool-pref: "wireframe.urlbar.icons.hide") {
+      @media (-moz-bool-pref: "wireframe.urlbar.icons.greyscale") {
         #urlbar-container:has(#urlbar[breakout-extend]) #urlbar-results img {
           filter: grayscale(100%) !important;
         }
@@ -1206,7 +1193,7 @@
 
   /* === SLIM CENTER URLBAR === */
 
-  @media (-moz-pref("daralla.urlbar.style","slim(center)")){
+  @media (-moz-pref("wireframe.urlbar.style","slim(center)")){
     /* move the navbar out from sidebar so url can have the same bahavior as other toolbar mode */
     [zen-compact-mode="true"] {
       #urlbar-container:has(#urlbar[open]) {
@@ -1405,14 +1392,14 @@
     } */
 
     /* Hide/style website icons based on preferences */
-    @media (-moz-bool-pref: "daralla.urlbar.icons.hide") {
+    @media (-moz-bool-pref: "wireframe.urlbar.icons.hide") {
       #urlbar-container:has(#urlbar[breakout-extend]) #urlbar-results img {
         display: none !important;
       }
     }
 
-    @media not (-moz-bool-pref: "daralla.urlbar.icons.hide") {
-      @media (-moz-bool-pref: "daralla.urlbar.icons.greyscale") {
+    @media not (-moz-bool-pref: "wireframe.urlbar.icons.hide") {
+      @media (-moz-bool-pref: "wireframe.urlbar.icons.greyscale") {
         #urlbar-container:has(#urlbar[breakout-extend]) #urlbar-results img {
           filter: grayscale(100%) !important;
         }
@@ -1525,7 +1512,7 @@
     }
   }
 
-  @media (-moz-pref("daralla.urlbar.style","full")){
+  @media (-moz-pref("wireframe.urlbar.style","full")){
     #urlbar[open] {
       min-width: 500px !important;
       max-width: 500px !important;
@@ -1562,14 +1549,14 @@
     }
 
     /* Hide/style website icons based on preferences */
-    @media (-moz-bool-pref: "daralla.urlbar.icons.hide") {
+    @media (-moz-bool-pref: "wireframe.urlbar.icons.hide") {
       #urlbar-container:has(#urlbar[breakout-extend]) #urlbar-results img {
         display: none !important;
       }
     }
 
-    @media not (-moz-bool-pref: "daralla.urlbar.icons.hide") {
-      @media (-moz-bool-pref: "daralla.urlbar.icons.greyscale") {
+    @media not (-moz-bool-pref: "wireframe.urlbar.icons.hide") {
+      @media (-moz-bool-pref: "wireframe.urlbar.icons.greyscale") {
         #urlbar-container:has(#urlbar[breakout-extend]) #urlbar-results img {
           filter: grayscale(100%) !important;
         }
@@ -1584,13 +1571,12 @@
     margin-left: 0px !important;
  }
 
- @media not (-moz-bool-pref: "daralla.urlbar.position.top"){
+ @media not (-moz-bool-pref: "wireframe.urlbar.position.top"){
    #nav-bar {
      order: 1 !important;
      margin-bottom: 10px !important;
    }
  }
-}
 
 /* === URLBAR OPENING ANIMATIONS === */
 
@@ -1609,7 +1595,7 @@
 
 
 /* === Default (Slide From Bottom) === */
-@media (-moz-pref("daralla.urlbar-open.effect", "Slide from Bottom")) {
+@media (-moz-pref("wireframe.urlbar-open.effect", "Slide from Bottom")) {
   @keyframes slide-from-bottom {
     0% {
       opacity: 0;
@@ -1633,7 +1619,7 @@
 
 
 /* === Magnetic Rise === */
-@media (-moz-pref("daralla.urlbar-open.effect", "Magnetic Rise")) {
+@media (-moz-pref("wireframe.urlbar-open.effect", "Magnetic Rise")) {
   @keyframes magneticRise {
     0% {
       opacity: 0;
@@ -1657,7 +1643,7 @@
   }
 }
 
-@media (-moz-pref("daralla.urlbar-open.effect", "PopCorn")) {
+@media (-moz-pref("wireframe.urlbar-open.effect", "PopCorn")) {
   @keyframes PopCorn {
     0% {
       opacity: 0;
@@ -1680,7 +1666,7 @@
   }
 }
 
-@media (-moz-pref("daralla.urlbar-open.effect", "Drop Off")) {
+@media (-moz-pref("wireframe.urlbar-open.effect", "Drop Off")) {
   @keyframes DropOff {
     0% {
       opacity: 0;
@@ -1702,7 +1688,7 @@
   }
 }
 
-@media (-moz-pref("daralla.urlbar-open.effect", "Neon Flash")) {
+@media (-moz-pref("wireframe.urlbar-open.effect", "Neon Flash")) {
   @keyframes neonFlash {
     0% {
       opacity: 0;
@@ -1725,7 +1711,7 @@
   }
 }
 
-@media (-moz-pref("daralla.urlbar-open.effect", "Soft Warp")) {
+@media (-moz-pref("wireframe.urlbar-open.effect", "Soft Warp")) {
   @keyframes softWarp {
     0% {
       opacity: 0;
@@ -1748,7 +1734,7 @@
   }
 }
 
-@media (-moz-pref("daralla.urlbar-open.effect", "Unfold")) {
+@media (-moz-pref("wireframe.urlbar-open.effect", "Unfold")) {
   @keyframes Unfold {
     0% {
       opacity: 0;
@@ -1773,7 +1759,7 @@
   }
 }
 
-@media (-moz-pref("daralla.urlbar-open.effect", "Glitch Phase")) {
+@media (-moz-pref("wireframe.urlbar-open.effect", "Glitch Phase")) {
   @keyframes glitchPhase {
     0% {
       opacity: 0;
@@ -1803,7 +1789,7 @@
   }
 }
 
-@media (-moz-pref("daralla.urlbar-open.effect", "Orbit Entry")) {
+@media (-moz-pref("wireframe.urlbar-open.effect", "Orbit Entry")) {
   @keyframes orbitEntry {
     0% {
       opacity: 0;
@@ -1827,7 +1813,7 @@
   }
 }
 
-@media (-moz-pref("daralla.urlbar-open.effect", "Slam Up")) {
+@media (-moz-pref("wireframe.urlbar-open.effect", "Slam Up")) {
   @keyframes slamUp {
     0% {
       opacity: 0;
@@ -1850,7 +1836,7 @@
   }
 }
 
-@media (-moz-pref("daralla.urlbar-open.effect", "Slinky Drop")) {
+@media (-moz-pref("wireframe.urlbar-open.effect", "Slinky Drop")) {
   @keyframes slinkyDrop {
     0% {
       opacity: 0;
@@ -1872,7 +1858,7 @@
   }
 }
 
-@media (-moz-pref("daralla.urlbar-open.effect", "Plane Shift")) {
+@media (-moz-pref("wireframe.urlbar-open.effect", "Plane Shift")) {
   @keyframes depthSurge {
     0% {
       opacity: 0;
@@ -1927,7 +1913,7 @@
   #urlbar[open] .urlbarView-results {
     overflow-y: auto !important;
     overflow-x: hidden !important;
-    max-height: none !important; /* allow the browser to size the results list */
+    max-height: auto !important; /* tweak visible height */
     perspective: 1200px;
     transform-style: preserve-3d;
     position: relative;
@@ -1995,44 +1981,45 @@
 }
   
 /* UrlBar border radius pref options */
-@media (-moz-pref("daralla.urlbar.border_radius", 0)) {
+@media (-moz-pref("wireframe.urlbar.border_radius", 0)) {
     :root {
         --na-urlbar-border-radius: 0px;
     }
 }
 
-@media (-moz-pref("daralla.urlbar.border_radius", 4)) {
+@media (-moz-pref("wireframe.urlbar.border_radius", 4)) {
     :root {
         --na-urlbar-border-radius: 4px;
     }
 }
 
-@media (-moz-pref("daralla.urlbar.border_radius", 8)) {
+@media (-moz-pref("wireframe.urlbar.border_radius", 8)) {
     :root {
         --na-urlbar-border-radius: 8px;
     }
 }
 
-@media (-moz-pref("daralla.urlbar.border_radius", 12)) {
+@media (-moz-pref("wireframe.urlbar.border_radius", 12)) {
     :root {
         --na-urlbar-border-radius: 12px;
     }
 }
 
-@media (-moz-pref("daralla.urlbar.border_radius", 16)) {
+@media (-moz-pref("wireframe.urlbar.border_radius", 16)) {
     :root {
         --na-urlbar-border-radius: 16px;
     }
 }
 
-@media (-moz-pref("daralla.urlbar.border_radius", 20)) {
+@media (-moz-pref("wireframe.urlbar.border_radius", 20)) {
     :root {
         --na-urlbar-border-radius: 20px;
     }
 }
   
-@media (-moz-pref("daralla.urlbar.border_radius", 24)) {
+@media (-moz-pref("wireframe.urlbar.border_radius", 24)) {
     :root {
         --na-urlbar-border-radius: 24px;
     }
+}
 }

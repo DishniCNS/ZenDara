@@ -36,7 +36,7 @@
     --na-color-border: light-dark(rgba(0, 0, 0, 1),rgba(209, 207, 192, 1)) !important;
   }
 
-/* @media (-moz-pref("daralla.theme", 0)) {
+/* @media (-moz-pref("wireframe.theme", 0)) {
   :root {
     --na-color-text: rgb(30, 30, 31);
     --na-color-bg: rgba(239, 233, 217, 1);
@@ -58,7 +58,7 @@
   }
 }
 
-@media (-moz-pref("daralla.theme", 1)) {
+@media (-moz-pref("wireframe.theme", 1)) {
   :root {
     --na-color-text: rgba(209, 207, 192, 1);
     --na-color-bg: rgba(30, 30, 31, 1);

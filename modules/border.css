@@ -44,7 +44,7 @@ body > hbox {
 }
 
 /* ====== WINDOW BORDERS ====== */
-@media (-moz-pref("daralla.window.border", "wireframe")){
+@media (-moz-pref("wireframe.window.border", "wireframe")){
     :root[sizemode="maximized"] #browser::before {
         content: "";
         position: absolute;
@@ -65,7 +65,7 @@ body > hbox {
     }
 }
 
-@media (-moz-pref("daralla.window.border", "macos")){
+@media (-moz-pref("wireframe.window.border", "macos")){
     :root[sizemode="normal"] #browser::before {
       content: "";
       position: absolute;
@@ -175,7 +175,7 @@ body > hbox {
 }
 
 /* ====== WEBVIEW BORDER ====== */
-@media not (-moz-pref("daralla.webview.border")){
+@media not (-moz-pref("wireframe.webview.border")){
     /* content window border size on RIGHT side tabbar */
     :root[zen-right-side="true"]:not([zen-compact-mode="true"]):not(
             [inDOMFullscreen="true"]
@@ -193,7 +193,7 @@ body > hbox {
     }
 }
 
-@media (-moz-pref("daralla.webview.border", "wireframe")){
+@media (-moz-pref("wireframe.webview.border", "wireframe")){
     /* content window border size on RIGHT side tabbar */
     :root[zen-right-side="true"]:not([zen-compact-mode="true"]):not(
             [inDOMFullscreen="true"]
@@ -211,7 +211,7 @@ body > hbox {
     }
 }
 
-@media (-moz-pref("daralla.webview.border", "macos")) {
+@media (-moz-pref("wireframe.webview.border", "macos")) {
 
   :root:not([zen-compact-mode="true"]):not([inDOMFullscreen="true"])
 
@@ -247,7 +247,7 @@ body > hbox {
 
 
 /* fix for overflowing borders when webview border is off */
-@media not (-moz-pref("daralla.webview.border")){
+@media not (-moz-pref("wireframe.webview.border")){
     /* content window border size on RIGHT side tabbar */
     :root[zen-right-side="true"]:not([zen-compact-mode="true"]):not(
             [inDOMFullscreen="true"]
@@ -278,7 +278,7 @@ body > hbox {
 } */
 
 /* @media (-moz-pref("zen.view.use-single-toolbar")) {
-  @media not (-moz-bool-pref: "daralla.urlbar.position.top"){
+  @media not (-moz-bool-pref: "wireframe.urlbar.position.top"){
     :root[zen-sidebar-expanded="true"]:not([zen-compact-mode="true"]):not([inDOMFullscreen="true"]) #zen-tabbox-wrapper {
       margin-bottom: calc( var(--na-window-margin) - 10px ) !important;
     }
@@ -300,7 +300,7 @@ body > hbox {
     padding: 0px !important;
 }
 
-@media (-moz-pref("daralla.tab-shadow.disabled")){
+@media (-moz-pref("wireframe.tab-shadow.disabled")){
     #zen-appcontent-wrapper{
         overflow: hidden !important;
     }
@@ -337,7 +337,7 @@ body > hbox {
 
 /* ADD WEBVIEW BORDER RADIUS TO CHILDREN ELEMENTS OF TABBOX */
 :root:not([zen-compact-mode="true"]) {
-/*     @media not (-moz-pref("daralla.nogaps.enabled")) { */
+/*     @media not (-moz-pref("wireframe.nogaps.enabled")) { */
         #tabbrowser-tabpanels {
             border-radius: var(--na-user-border-radius) !important;
         }
@@ -420,7 +420,7 @@ body > hbox {
 
     --zen-element-separation: 0px !important;
 
-    @media not (-moz-pref("daralla.urlbar.position.top")) {
+    @media not (-moz-pref("wireframe.urlbar.position.top")) {
         #zen-tabbox-wrapper,
         #tabbrowser-tabbox,
         #tabbrowser-tabbox > *,
@@ -431,7 +431,7 @@ body > hbox {
         }
     }
 
-    @media (-moz-pref("daralla.urlbar.position.top")) {
+    @media (-moz-pref("wireframe.urlbar.position.top")) {
         #zen-tabbox-wrapper,
         #tabbrowser-tabbox,
         #tabbrowser-tabbox > *,
@@ -467,13 +467,13 @@ body > hbox {
 
 /* BORDER FOR MULTI TOOLBAR TOP BAR */
 :root:not([zen-single-toolbar="true"])[zen-compact-mode="true"] {
-    @media not (-moz-pref("daralla.urlbar.position.top")) {
+    @media not (-moz-pref("wireframe.urlbar.position.top")) {
         #zen-appcontent-navbar-wrapper {
             border-top: 2px solid var(--na-color-border) !important;
         }
     }
 
-    @media (-moz-pref("daralla.urlbar.position.top")) {
+    @media (-moz-pref("wireframe.urlbar.position.top")) {
         #zen-appcontent-navbar-wrapper {
             border-bottom: 2px solid var(--na-color-border) !important;
         }
@@ -481,7 +481,7 @@ body > hbox {
 }
 
 /* macos style border for essentials */
-@media (-moz-pref("daralla.essen.borders", "macos-all")){
+@media (-moz-pref("wireframe.essen.borders", "macos-all")){
   .tabbrowser-tab:has([zen-essential]) .tab-background::after{
     position: absolute;
     inset: 2px;
@@ -501,7 +501,7 @@ body > hbox {
   }
 }
 
-@media (-moz-pref("daralla.essen.borders", "macos-active")){
+@media (-moz-pref("wireframe.essen.borders", "macos-active")){
   .tabbrowser-tab[selected]:has([zen-essential]) .tab-background::after{
     position: absolute;
     inset: 2px;
@@ -522,7 +522,7 @@ body > hbox {
 }
 
 /* macostyle border for tabs */
-@media (-moz-pref("daralla.tab.borders", "macos-all")){
+@media (-moz-pref("wireframe.tab.borders", "macos-all")){
   .tabbrowser-tab:not([zen-essential]) .tab-stack::after{
     position: absolute;
     z-index: -1 !important;
@@ -543,7 +543,7 @@ body > hbox {
   }
 }
 
-@media (-moz-pref("daralla.tab.borders", "macos-active")){
+@media (-moz-pref("wireframe.tab.borders", "macos-active")){
   .tabbrowser-tab[selected]:not([zen-essential]) .tab-stack::after{
     position: absolute;
     z-index: -1 !important;
@@ -565,80 +565,80 @@ body > hbox {
 }
 
 /* === Webview Border Radius Pref === */
-@media (-moz-pref("daralla.webview.border_radius", 0)) {
+@media (-moz-pref("wireframe.webview.border_radius", 0)) {
     :root {
         --na-user-border-radius: 0px;
     }
 }
 
-@media (-moz-pref("daralla.webview.border_radius", 4)) {
+@media (-moz-pref("wireframe.webview.border_radius", 4)) {
     :root {
         --na-user-border-radius: 4px;
     }
 }
 
-@media (-moz-pref("daralla.webview.border_radius", 8)) {
+@media (-moz-pref("wireframe.webview.border_radius", 8)) {
     :root {
         --na-user-border-radius: 8px;
     }
 }
 
-@media (-moz-pref("daralla.webview.border_radius", 12)) {
+@media (-moz-pref("wireframe.webview.border_radius", 12)) {
     :root {
         --na-user-border-radius: 12px;
     }
 }
 
-@media (-moz-pref("daralla.webview.border_radius", 16)) {
+@media (-moz-pref("wireframe.webview.border_radius", 16)) {
     :root {
         --na-user-border-radius: 16px;
     }
 }
 
-@media (-moz-pref("daralla.webview.border_radius", 20)) {
+@media (-moz-pref("wireframe.webview.border_radius", 20)) {
     :root {
         --na-user-border-radius: 20px;
     }
 }
 
 /* === Window border radius pref === */
-@media (-moz-pref("daralla.window.border_radius", 0)) {
+@media (-moz-pref("wireframe.window.border_radius", 0)) {
     :root {
         --na-window-border-radius: 0px;
     }
 }
 
-@media (-moz-pref("daralla.window.border_radius", 4)) {
+@media (-moz-pref("wireframe.window.border_radius", 4)) {
     :root {
         --na-window-border-radius: 4px;
     }
 }
 
-@media (-moz-pref("daralla.window.border_radius", 8)) {
+@media (-moz-pref("wireframe.window.border_radius", 8)) {
     :root {
         --na-window-border-radius: 8px;
     }
 }
 
-@media (-moz-pref("daralla.window.border_radius", 12)) {
+@media (-moz-pref("wireframe.window.border_radius", 12)) {
     :root {
         --na-window-border-radius: 12px;
     }
 }
 
-@media (-moz-pref("daralla.window.border_radius", 16)) {
+@media (-moz-pref("wireframe.window.border_radius", 16)) {
     :root {
         --na-window-border-radius: 16px;
     }
 }
 
-@media (-moz-pref("daralla.window.border_radius", 20)) {
+@media (-moz-pref("wireframe.window.border_radius", 20)) {
     :root {
         --na-window-border-radius: 20px;
     }
 }
 
-@media (-moz-pref("daralla.window.border_radius", 24)) {
+@media (-moz-pref("wireframe.window.border_radius", 24)) {
     :root {
         --na-window-border-radius: 24px;
     }
@@ -646,7 +646,7 @@ body > hbox {
 
 /* === NO GAPS === */
 
-@media (-moz-pref("daralla.nogaps.enabled")){
+@media (-moz-pref("wireframe.nogaps.enabled")){
     :root[zen-single-toolbar="true"]{
         --zen-element-separation: 0px !important;
     }
@@ -705,7 +705,7 @@ body > hbox {
 
 /* Always animate back and forth */
 browser {
-  @media (-moz-pref("daralla.trackpad.animation")) {
+  @media (-moz-pref("wireframe.trackpad.animation")) {
     transition: transform 0.33s ease, scale 0.33s ease, border-radius 0.33s ease !important;
   }
 }
@@ -714,7 +714,7 @@ browser {
 .browserStack:has(
     #historySwipeAnimationPreviousArrow:not([style="translate: none;"])
 ) browser {
-  @media (-moz-pref("daralla.trackpad.animation")) {
+  @media (-moz-pref("wireframe.trackpad.animation")) {
     scale: 0.95 !important;
     transform: translateX(3%) !important;
     border-radius: var(--na-user-border-radius) !important;
@@ -725,7 +725,7 @@ browser {
 .browserStack:has(
     #historySwipeAnimationNextArrow:not([style="translate: none;"])
 ) browser {
-  @media (-moz-pref("daralla.trackpad.animation")) {
+  @media (-moz-pref("wireframe.trackpad.animation")) {
     scale: 0.95 !important;
     transform: translateX(-3%) !important;
     border-radius: var(--na-user-border-radius) !important;

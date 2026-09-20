@@ -1,6 +1,6 @@
 /* === BOOKMARK AND HISTORY === */
 
-@media (-moz-pref("daralla.ff-sidebar.floating")){
+@media (-moz-pref("wireframe.ff-sidebar.floating")){
   /* bookmark and history */
   #tabbrowser-tabbox > #sidebar-box {
     z-index: 1 !important;
@@ -18,7 +18,7 @@
   }
 }
 
-@media not (-moz-pref("daralla.ff-sidebar.floating")){
+@media not (-moz-pref("wireframe.ff-sidebar.floating")){
   #tabbrowser-tabbox > #sidebar-box {
     background-color: var(--zen-primary-color) !important;
   }

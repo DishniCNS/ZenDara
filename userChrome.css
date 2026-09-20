@@ -1,6 +1,4 @@
-/* Daralla Theme for Zen Browser */
-/* Import modular CSS files */
-
+/* Daralla 1.0.0 */
 @import url("modules/variables.css");
 @import url("modules/animations.css");
 @import url("modules/panel.css");
@@ -18,8 +16,5 @@
 @import url("modules/normal-urlbar.css");
 @import url("modules/pinned-extensions.css");
 @import url("modules/browser.css");
-/* Daralla adaptive layer: media, Essentials, folders, site color and split-view visuals. */
-@import url("modules/adaptive-ui.css");
-@import url("modules/daralla-enhancements.css");
-@import url("modules/command-center.css");
-@import url("modules/daralla-safe-overrides.css");
+@import url("modules/zia-features.css");
+@import url("modules/daralla-design.css");
