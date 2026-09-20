@@ -5,7 +5,8 @@
   "author": "Dishni",
   "version": "0.2.0",
   "style": {
-    "chrome": "userChrome.css"
+    "chrome": "userChrome.css",
+    "content": "userContent.css"
   },
   "scripts": {
     "scripts/daralla.uc.js": {
@@ -26,9 +27,9 @@
   "fork": [
     "zen"
   ],
-  "homepage": "https://github.com/Dishni/Daralla",
+  "homepage": "https://github.com/DishniCNS/ZenDara",
   "createdAt": "2026-09-20",
   "updatedAt": "2026-09-20",
-  "readme": "https://github.com/Dishni/Daralla/blob/main/README.md",
+  "readme": "https://github.com/DishniCNS/ZenDara/blob/main/README.md",
   "image": ""
 }
