@@ -1590,6 +1590,7 @@
      margin-bottom: 10px !important;
    }
  }
+}
 
 /* === URLBAR OPENING ANIMATIONS === */
 
@@ -1926,7 +1927,7 @@
   #urlbar[open] .urlbarView-results {
     overflow-y: auto !important;
     overflow-x: hidden !important;
-    max-height: auto !important; /* tweak visible height */
+    max-height: none !important; /* allow the browser to size the results list */
     perspective: 1200px;
     transform-style: preserve-3d;
     position: relative;

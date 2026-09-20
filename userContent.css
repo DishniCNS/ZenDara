@@ -101,37 +101,37 @@
   /* === Logo Options === */
   /*@media (-moz-pref("daralla.blank.logo",0)){
       html::before{
-        background-image: url("https://raw.githubusercontent.com/SehajveerSingh2005/zen-wireframe-2.0/bf814f7214b44020f2d2587d705bffdadd02c7f8/elements/daralla.svg");
+        background-image: url("elements/wireframe.svg");
       }
   }
   
   @media (-moz-pref("daralla.blank.logo",1)){
       html::before{
-        background-image: url("https://raw.githubusercontent.com/SehajveerSingh2005/zen-wireframe-2.0/71864b9e5b5c6eca2586a013acc561fe32dbe998/elements/checks.svg");
+        background-image: url("elements/checks.svg");
       }
   }
   
   @media (-moz-pref("daralla.blank.logo",2)){
       html::before{
-        background-image: url("https://raw.githubusercontent.com/SehajveerSingh2005/zen-wireframe-2.0/71864b9e5b5c6eca2586a013acc561fe32dbe998/elements/starlight.svg");
+        background-image: url("elements/starlight.svg");
       }
   }
   
   @media (-moz-pref("daralla.blank.logo",3)){
       html::before{
-        background-image: url("https://raw.githubusercontent.com/SehajveerSingh2005/zen-wireframe-2.0/71864b9e5b5c6eca2586a013acc561fe32dbe998/elements/rings.svg");
+        background-image: url("elements/rings.svg");
       }
   }
   
   @media (-moz-pref("daralla.blank.logo",4)){
       html::before{
-        background-image: url("https://raw.githubusercontent.com/SehajveerSingh2005/zen-wireframe-2.0/673ea4705827c12dfbaeb99f29ac026dc3e95e08/elements/waves.svg");
+        background-image: url("elements/waves.svg");
       }
   }
   
   @media (-moz-pref("daralla.blank.logo",5)){
       html::before{
-        background-image: url("https://raw.githubusercontent.com/SehajveerSingh2005/zen-wireframe-2.0/673ea4705827c12dfbaeb99f29ac026dc3e95e08/elements/globe.svg");
+        background-image: url("elements/globe.svg");
       }
   }
 }*/
