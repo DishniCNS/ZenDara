@@ -1410,5 +1410,12 @@
         "label":  "Make blank and empty tabs truly transparent",
         "value":  "boolean",
         "defaultValue":  true
+    },
+    {
+        "type":  "checkbox",
+        "property":  "daralla.window-controls.show",
+        "label":  "Show window controls (minimize, maximize, close)",
+        "value":  "boolean",
+        "defaultValue":  false
     }
 ]

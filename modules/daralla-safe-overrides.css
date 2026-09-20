@@ -1,28 +1,83 @@
-/* DARALLA 0.3.3 — SAFE UI OVERRIDES
- * Only targets browser chrome. Deliberately avoids global webview geometry.
+/* DARALLA 0.3.4 — SAFE UI OVERRIDES
+ * Focus: native Zen new-tab overlay, no webview breakage, no topbar gap,
+ * robust empty-tab transparency, and deterministic hidden window controls.
+ *
+ * Deliberately avoids generic #urlbar[open] and global webview styling.
  */
 
-/* ---------- Window controls ---------- */
-@media (-moz-bool-pref: "daralla.window-controls.hide") {
-  .titlebar-buttonbox,
-  .titlebar-buttonbox-container,
-  .titlebar-buttonbox .titlebar-button,
-  .titlebar-button {
+/* ============================================================
+   WINDOW CONTROLS
+   Hide them by default. Use daralla.window-controls.show to restore.
+   This avoids relying on whether Sine materialized a legacy default pref.
+   ============================================================ */
+@media not (-moz-bool-pref: "daralla.window-controls.show") {
+  #titlebar .titlebar-buttonbox,
+  #titlebar .titlebar-buttonbox-container,
+  #titlebar .titlebar-buttonbox .titlebar-button,
+  #titlebar .titlebar-button {
     display: none !important;
     visibility: collapse !important;
     width: 0 !important;
     min-width: 0 !important;
     max-width: 0 !important;
+    height: 0 !important;
     min-height: 0 !important;
     max-height: 0 !important;
     margin: 0 !important;
     padding: 0 !important;
     border: 0 !important;
     background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  /* Remove the empty toolbar strip that used to remain behind the controls. */
+  #titlebar .titlebar-buttonbox-container,
+  #titlebar > .titlebar-buttonbox-container {
+    display: none !important;
   }
 }
 
-/* ---------- Split View: remove native pane header strip/buttons ---------- */
+/* ============================================================
+   TOP EDGE / TOOLBAR STRIP
+   Keep browser chrome transparent and remove the artificial top gap.
+   Do not collapse #titlebar itself; Zen still uses it for vertical tabs.
+   ============================================================ */
+#titlebar,
+#navigator-toolbox,
+#zen-toolbar-background,
+.zen-toolbar-background,
+#zen-appcontent-navbar-wrapper,
+#zen-appcontent-navbar-container {
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+:root:not([inDOMFullscreen="true"]):not([popup-window]) {
+  #zen-appcontent-wrapper {
+    margin-top: 0 !important;
+  }
+
+  #zen-tabbox-wrapper {
+    margin-top: 0 !important;
+  }
+
+  #zen-appcontent-navbar-wrapper {
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+  }
+
+  #zen-appcontent-navbar-container {
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+  }
+}
+
+/* ============================================================
+   SPLIT VIEW
+   Zen creates these native pane headers. Hide both the container and
+   its inner header/buttons without touching the panes themselves.
+   ============================================================ */
 #tabbrowser-tabbox[zen-split-view="true"] .zen-view-splitter-header-container,
 #tabbrowser-tabbox[zen-split-view="true"] .zen-view-splitter-header,
 :root:has(#tabbrowser-tabbox[zen-split-view="true"]) .zen-view-splitter-header-container,
@@ -45,22 +100,23 @@
   display: none !important;
 }
 
-/* ---------- New-tab overlay: use Zen's native Ctrl+T mechanism ----------
- * Zen marks the temporary URL bar with [zen-newtab]. Keep this styling scoped
- * to that state so normal URL-bar navigation remains untouched.
- */
+/* ============================================================
+   NATIVE CTRL+T NEW-TAB OVERLAY
+   Zen itself supplies [zen-newtab]. We only style that state.
+   Position is intentionally center / slightly below center.
+   ============================================================ */
 #urlbar[open][zen-newtab],
 #urlbar[open][zen-newtab][usertyping] {
   position: fixed !important;
   left: 50% !important;
   right: auto !important;
-  top: var(--zen-urlbar-top, calc(50vh - 166px)) !important;
+  top: clamp(140px, 46vh, calc(100vh - 420px)) !important;
   bottom: auto !important;
-  width: min(var(--zen-urlbar-width, 680px), calc(100vw - 48px)) !important;
-  min-width: min(var(--zen-urlbar-width, 680px), calc(100vw - 48px)) !important;
-  max-width: min(var(--zen-urlbar-width, 680px), calc(100vw - 48px)) !important;
+  width: min(680px, calc(100vw - 64px)) !important;
+  min-width: min(680px, calc(100vw - 64px)) !important;
+  max-width: min(680px, calc(100vw - 64px)) !important;
   height: auto !important;
-  min-height: 52px !important;
+  min-height: 54px !important;
   margin: 0 !important;
   padding: 0 !important;
   transform: translateX(-50%) !important;
@@ -74,7 +130,8 @@
   z-index: 100000 !important;
 }
 
-#urlbar[open][zen-newtab] > .urlbar-background {
+#urlbar[open][zen-newtab] > .urlbar-background,
+#urlbar[open][zen-newtab][usertyping] > .urlbar-background {
   position: absolute !important;
   inset: 0 !important;
   border-radius: 16px !important;
@@ -93,8 +150,8 @@
   position: relative !important;
   z-index: 2 !important;
   box-sizing: border-box !important;
-  height: 52px !important;
-  min-height: 52px !important;
+  height: 54px !important;
+  min-height: 54px !important;
   padding: 0 16px !important;
   margin: 0 !important;
   border-radius: 16px !important;
@@ -118,7 +175,6 @@
   font-weight: 500 !important;
 }
 
-/* Keep result content available while typing. */
 #urlbar[open][zen-newtab] .urlbarView,
 #urlbar[open][zen-newtab][usertyping] .urlbarView {
   position: relative !important;
@@ -164,16 +220,18 @@
   border-radius: 10px !important;
 }
 
-/* When the native overlay is visible, make the old toolbar background disappear
- * without changing layout or hiding the URL bar itself. */
-:root:has(#urlbar[open][zen-newtab]) #zen-appcontent-navbar-wrapper,
-:root:has(#urlbar[open][zen-newtab]) #nav-bar,
-:root:has(#urlbar[open][zen-newtab]) #nav-bar-customization-target {
-  background: transparent !important;
-  box-shadow: none !important;
+/* Remove any generic floating-urlbar transform/transition from the new-tab state. */
+#urlbar[open][zen-newtab],
+#urlbar[open][zen-newtab] > *,
+#urlbar[open][zen-newtab] .urlbarView,
+#urlbar[open][zen-newtab] .urlbarView-results {
+  transition: none !important;
 }
 
-/* ---------- Truly transparent empty/blank tabs ---------- */
+/* ============================================================
+   TRULY TRANSPARENT EMPTY TAB
+   This is activated only while the selected browser is actually blank.
+   ============================================================ */
 :root[daralla-blank-transparent="true"] #zen-appcontent-wrapper,
 :root[daralla-blank-transparent="true"] #zen-tabbox-wrapper,
 :root[daralla-blank-transparent="true"] #tabbrowser-tabbox,
@@ -184,22 +242,27 @@
   background: transparent !important;
   background-image: none !important;
   box-shadow: none !important;
+  border-color: transparent !important;
 }
 
-:root[daralla-blank-transparent="true"] .browserStack::before {
+:root[daralla-blank-transparent="true"] .browserStack::before,
+:root[daralla-blank-transparent="true"] .browserStack::after {
   display: none !important;
 }
 
-/* ---------- Compact sidebar symmetry ---------- */
-:root[zen-compact-mode="true"][zen-right-side="true"] #zen-sidebar-top-buttons,
-:root[zen-compact-mode="true"][zen-right-side="true"] #zen-sidebar-foot-buttons,
-:root[zen-compact-mode="true"]:not([zen-right-side="true"]) #zen-sidebar-top-buttons,
-:root[zen-compact-mode="true"]:not([zen-right-side="true"]) #zen-sidebar-foot-buttons {
+
+/* ============================================================
+   COMPACT SIDEBAR SYMMETRY
+   ============================================================ */
+:root[zen-compact-mode="true"] #zen-sidebar-top-buttons,
+:root[zen-compact-mode="true"] #zen-sidebar-foot-buttons {
   box-sizing: border-box !important;
   padding-inline: 6px !important;
 }
 
-/* ---------- Reduced motion ---------- */
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
 @media (prefers-reduced-motion: reduce) {
   #urlbar[open][zen-newtab],
   #urlbar[open][zen-newtab] * {

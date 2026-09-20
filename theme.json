@@ -1,9 +1,9 @@
 {
     "id":  "daralla",
     "name":  "Daralla",
-    "description":  "Daralla - safe Wireframe-style Ctrl+T overlay, truly transparent empty tabs, centered URL bar, refined sidebars, media and split view without modifying webview layout.",
+    "description":  "Daralla - safe native Zen Ctrl+T overlay, truly transparent empty tabs, no artificial topbar gap, refined sidebars, media and split view without modifying webview layout.",
     "author":  "Dishni",
-    "version":  "0.3.3",
+    "version":  "0.3.4",
     "style":  {
                   "chrome":  "userChrome.css",
                   "content":  "userContent.css"
