@@ -3879,7 +3879,7 @@
     const urlbar = gURLBar.textbox || document.getElementById("urlbar");
 
     safely("applyZenDefaults", applyZenDefaults);
-    safely("watchNewTabPage", watchNewTabPage);
+    /* Native Zen handles Ctrl+T; Daralla does not redirect new tabs to a search homepage. */
     safely("createWorkspaceSlot", createWorkspaceSlot);
     safely("watchTabAnimations", watchTabAnimations);
     safely("addFolderBounce", addFolderBounce);

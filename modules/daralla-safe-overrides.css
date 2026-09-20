@@ -1,0 +1,209 @@
+/* DARALLA 0.3.3 — SAFE UI OVERRIDES
+ * Only targets browser chrome. Deliberately avoids global webview geometry.
+ */
+
+/* ---------- Window controls ---------- */
+@media (-moz-bool-pref: "daralla.window-controls.hide") {
+  .titlebar-buttonbox,
+  .titlebar-buttonbox-container,
+  .titlebar-buttonbox .titlebar-button,
+  .titlebar-button {
+    display: none !important;
+    visibility: collapse !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    max-width: 0 !important;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+  }
+}
+
+/* ---------- Split View: remove native pane header strip/buttons ---------- */
+#tabbrowser-tabbox[zen-split-view="true"] .zen-view-splitter-header-container,
+#tabbrowser-tabbox[zen-split-view="true"] .zen-view-splitter-header,
+:root:has(#tabbrowser-tabbox[zen-split-view="true"]) .zen-view-splitter-header-container,
+:root:has(#tabbrowser-tabbox[zen-split-view="true"]) .zen-view-splitter-header {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+#tabbrowser-tabbox[zen-split-view="true"] .zen-view-splitter-header-container > * {
+  display: none !important;
+}
+
+/* ---------- New-tab overlay: use Zen's native Ctrl+T mechanism ----------
+ * Zen marks the temporary URL bar with [zen-newtab]. Keep this styling scoped
+ * to that state so normal URL-bar navigation remains untouched.
+ */
+#urlbar[open][zen-newtab],
+#urlbar[open][zen-newtab][usertyping] {
+  position: fixed !important;
+  left: 50% !important;
+  right: auto !important;
+  top: var(--zen-urlbar-top, calc(50vh - 166px)) !important;
+  bottom: auto !important;
+  width: min(var(--zen-urlbar-width, 680px), calc(100vw - 48px)) !important;
+  min-width: min(var(--zen-urlbar-width, 680px), calc(100vw - 48px)) !important;
+  max-width: min(var(--zen-urlbar-width, 680px), calc(100vw - 48px)) !important;
+  height: auto !important;
+  min-height: 52px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: translateX(-50%) !important;
+  transform-origin: center center !important;
+  animation: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: visible !important;
+  z-index: 100000 !important;
+}
+
+#urlbar[open][zen-newtab] > .urlbar-background {
+  position: absolute !important;
+  inset: 0 !important;
+  border-radius: 16px !important;
+  background: color-mix(in srgb, var(--zen-primary-color, #25262a) 72%, transparent) !important;
+  border: 1px solid color-mix(in srgb, currentColor 16%, transparent) !important;
+  box-shadow:
+    0 28px 80px rgba(0, 0, 0, 0.34),
+    0 8px 28px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(28px) saturate(145%) !important;
+  pointer-events: none !important;
+}
+
+#urlbar[open][zen-newtab] .urlbar-input-container,
+#urlbar[open][zen-newtab][usertyping] .urlbar-input-container {
+  position: relative !important;
+  z-index: 2 !important;
+  box-sizing: border-box !important;
+  height: 52px !important;
+  min-height: 52px !important;
+  padding: 0 16px !important;
+  margin: 0 !important;
+  border-radius: 16px !important;
+  background: transparent !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+#urlbar[open][zen-newtab] .urlbar-input-box,
+#urlbar[open][zen-newtab] .urlbar-input,
+#urlbar[open][zen-newtab][usertyping] .urlbar-input-box,
+#urlbar[open][zen-newtab][usertyping] .urlbar-input {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+#urlbar[open][zen-newtab] .urlbar-input {
+  color: var(--toolbar-field-color, currentColor) !important;
+  font-size: 1.05em !important;
+  font-weight: 500 !important;
+}
+
+/* Keep result content available while typing. */
+#urlbar[open][zen-newtab] .urlbarView,
+#urlbar[open][zen-newtab][usertyping] .urlbarView {
+  position: relative !important;
+  z-index: 2 !important;
+  display: block !important;
+  width: 100% !important;
+  max-height: 333px !important;
+  margin: 0 !important;
+  padding: 4px 0 8px !important;
+  overflow: visible !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+#urlbar[open][zen-newtab] .urlbarView-results,
+#urlbar[open][zen-newtab][usertyping] .urlbarView-results {
+  max-height: 333px !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  margin: 0 !important;
+  padding: 0 8px 8px !important;
+  background: transparent !important;
+}
+
+#urlbar[open][zen-newtab] .urlbarView-body-inner,
+#urlbar[open][zen-newtab][usertyping] .urlbarView-body-inner {
+  display: list-item !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+#urlbar[open][zen-newtab] .urlbarView-row,
+#urlbar[open][zen-newtab] .urlbarView-row:hover,
+#urlbar[open][zen-newtab][usertyping] .urlbarView-row,
+#urlbar[open][zen-newtab][usertyping] .urlbarView-row:hover {
+  transform: none !important;
+  animation: none !important;
+  filter: none !important;
+  min-height: 42px !important;
+  margin: 2px 0 !important;
+  border-radius: 10px !important;
+}
+
+/* When the native overlay is visible, make the old toolbar background disappear
+ * without changing layout or hiding the URL bar itself. */
+:root:has(#urlbar[open][zen-newtab]) #zen-appcontent-navbar-wrapper,
+:root:has(#urlbar[open][zen-newtab]) #nav-bar,
+:root:has(#urlbar[open][zen-newtab]) #nav-bar-customization-target {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* ---------- Truly transparent empty/blank tabs ---------- */
+:root[daralla-blank-transparent="true"] #zen-appcontent-wrapper,
+:root[daralla-blank-transparent="true"] #zen-tabbox-wrapper,
+:root[daralla-blank-transparent="true"] #tabbrowser-tabbox,
+:root[daralla-blank-transparent="true"] #tabbrowser-tabpanels,
+:root[daralla-blank-transparent="true"] .browserSidebarContainer,
+:root[daralla-blank-transparent="true"] .browserStack,
+:root[daralla-blank-transparent="true"] browser[transparent="true"] {
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+:root[daralla-blank-transparent="true"] .browserStack::before {
+  display: none !important;
+}
+
+/* ---------- Compact sidebar symmetry ---------- */
+:root[zen-compact-mode="true"][zen-right-side="true"] #zen-sidebar-top-buttons,
+:root[zen-compact-mode="true"][zen-right-side="true"] #zen-sidebar-foot-buttons,
+:root[zen-compact-mode="true"]:not([zen-right-side="true"]) #zen-sidebar-top-buttons,
+:root[zen-compact-mode="true"]:not([zen-right-side="true"]) #zen-sidebar-foot-buttons {
+  box-sizing: border-box !important;
+  padding-inline: 6px !important;
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  #urlbar[open][zen-newtab],
+  #urlbar[open][zen-newtab] * {
+    animation: none !important;
+    transition-duration: 0.001ms !important;
+  }
+}

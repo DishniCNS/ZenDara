@@ -1,9 +1,9 @@
 {
     "id":  "daralla",
     "name":  "Daralla",
-    "description":  "Daralla - polished Zen Browser UI with Wireframe-style new-tab overlay, transparent blank pages, centered floating URL bar, symmetric sidebars, layered media cards, refined split view and Sine 2.3 compatibility.",
+    "description":  "Daralla - safe Wireframe-style Ctrl+T overlay, truly transparent empty tabs, centered URL bar, refined sidebars, media and split view without modifying webview layout.",
     "author":  "Dishni",
-    "version":  "0.3.2",
+    "version":  "0.3.3",
     "style":  {
                   "chrome":  "userChrome.css",
                   "content":  "userContent.css"
@@ -14,11 +14,11 @@
                                                                   "chrome://browser/content/browser.xhtml"
                                                               ]
                                               },
-                    "scripts/daralla-newtab.uc.js":  {
-                                                         "include":  [
-                                                                         "chrome://browser/content/browser.xhtml"
-                                                                     ]
-                                                     }
+                    "scripts/daralla-native-newtab.uc.js":  {
+                                                                "include":  [
+                                                                                "chrome://browser/content/browser.xhtml"
+                                                                            ]
+                                                            }
                 },
     "preferences":  "preferences.json",
     "tags":  [
