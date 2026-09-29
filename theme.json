@@ -1,15 +1,20 @@
 {
   "id": "daralla",
   "name": "Daralla",
-  "description": "A fresh Zen Browser theme inspired by Zia and Wireframe 2.0: card-based browser chrome, centered floating URL bar, transparent empty tabs and restrained Split View styling.",
+  "description": "A fresh Zen Browser theme inspired by Zia and Wireframe 2.0, with a true frame-based YouTube ambient-light projector for the sidebar and tabs.",
   "author": "Dishni",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "style": {
     "chrome": "userChrome.css",
     "content": "userContent.css"
   },
   "scripts": {
     "scripts/daralla-features.uc.js": {
+      "include": [
+        "chrome://browser/content/browser.xhtml"
+      ]
+    },
+    "scripts/daralla-ambilight.uc.js": {
       "include": [
         "chrome://browser/content/browser.xhtml"
       ]
@@ -22,15 +27,15 @@
     "wireframe",
     "zia",
     "sidebar",
-    "split-view",
-    "urlbar"
+    "ambient-light",
+    "youtube"
   ],
   "fork": [
     "zen"
   ],
   "homepage": "https://github.com/DishniCNS/ZenDara",
   "createdAt": "2026-09-20",
-  "updatedAt": "2026-09-20",
+  "updatedAt": "2026-09-29",
   "readme": "https://github.com/DishniCNS/ZenDara/blob/main/README.md",
   "image": ""
 }

@@ -1,0 +1,86 @@
+
+  /* Add these objects to the end of the existing preferences.json array:
+  {
+    "type": "text",
+    "label": "YouTube Ambilight",
+    "margin": "30px 0 20px 0",
+    "size": "25px"
+  },
+  {
+    "type": "separator"
+  },
+  {
+    "type": "checkbox",
+    "property": "daralla.ambilight.enabled",
+    "label": "Enable true video-frame ambient light in sidebar and tabs",
+    "value": "boolean",
+    "defaultValue": true
+  },
+  {
+    "type": "separator"
+  },
+  {
+    "type": "dropdown",
+    "property": "daralla.ambilight.fps",
+    "label": "Ambient light update rate",
+    "value": "number",
+    "defaultValue": 15,
+    "options": [
+      {"value": 10, "label": "10 FPS"},
+      {"value": 15, "label": "15 FPS"},
+      {"value": 20, "label": "20 FPS"},
+      {"value": 30, "label": "30 FPS"}
+    ]
+  },
+  {
+    "type": "separator"
+  },
+  {
+    "type": "dropdown",
+    "property": "daralla.ambilight.blur",
+    "label": "Ambient blur",
+    "value": "number",
+    "defaultValue": 34,
+    "options": [
+      {"value": 20, "label": "20px"},
+      {"value": 28, "label": "28px"},
+      {"value": 34, "label": "34px"},
+      {"value": 42, "label": "42px"},
+      {"value": 55, "label": "55px"}
+    ]
+  },
+  {
+    "type": "separator"
+  },
+  {
+    "type": "dropdown",
+    "property": "daralla.ambilight.intensity",
+    "label": "Ambient intensity",
+    "value": "number",
+    "defaultValue": 0.72,
+    "options": [
+      {"value": 0.45, "label": "45%"},
+      {"value": 0.60, "label": "60%"},
+      {"value": 0.72, "label": "72%"},
+      {"value": 0.85, "label": "85%"},
+      {"value": 1, "label": "100%"}
+    ]
+  },
+  {
+    "type": "separator"
+  },
+  {
+    "type": "dropdown",
+    "property": "daralla.ambilight.saturation",
+    "label": "Ambient saturation",
+    "value": "number",
+    "defaultValue": 1.35,
+    "options": [
+      {"value": 1, "label": "100%"},
+      {"value": 1.2, "label": "120%"},
+      {"value": 1.35, "label": "135%"},
+      {"value": 1.5, "label": "150%"},
+      {"value": 1.8, "label": "180%"}
+    ]
+  }
+  */

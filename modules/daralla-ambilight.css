@@ -1,0 +1,148 @@
+/* Daralla — true video-frame ambient light for the Zen sidebar */
+
+:root {
+  --daralla-ambilight-frame: none;
+  --daralla-ambilight-opacity: 0.72;
+  --daralla-ambilight-blur: 34px;
+  --daralla-ambilight-saturation: 1.35;
+}
+
+#titlebar {
+  position: relative !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+}
+
+/* Main projector: the actual YouTube frame is blurred, enlarged and
+   directionally cropped. This is deliberately not a flat color tint. */
+#titlebar::before {
+  content: "";
+  position: absolute !important;
+  z-index: -2 !important;
+  pointer-events: none !important;
+  inset: -18% -55% !important;
+
+  background-image: var(--daralla-ambilight-frame) !important;
+  background-repeat: no-repeat !important;
+  background-position: right center !important;
+  background-size: 265% 100% !important;
+
+  filter:
+    blur(var(--daralla-ambilight-blur))
+    saturate(var(--daralla-ambilight-saturation))
+    brightness(1.12) !important;
+
+  opacity: calc(var(--daralla-ambilight-opacity) * 0.72) !important;
+  transform: scale(1.08) !important;
+  transform-origin: right center !important;
+  transition: opacity 260ms ease, filter 260ms ease !important;
+}
+
+/* Tight projector: creates the brighter core of the ambient light. */
+#titlebar::after {
+  content: "";
+  position: absolute !important;
+  z-index: -1 !important;
+  pointer-events: none !important;
+  inset: -10% -42% !important;
+
+  background-image: var(--daralla-ambilight-frame) !important;
+  background-repeat: no-repeat !important;
+  background-position: right center !important;
+  background-size: 220% 100% !important;
+
+  filter:
+    blur(calc(var(--daralla-ambilight-blur) * 0.42))
+    saturate(calc(var(--daralla-ambilight-saturation) * 1.08))
+    brightness(1.08) !important;
+
+  opacity: calc(var(--daralla-ambilight-opacity) * 0.30) !important;
+  transform: scale(1.06) !important;
+  transform-origin: right center !important;
+}
+
+/* Keep Zen UI above the ambient field. */
+#navigator-toolbox,
+#zen-browser-tabs-wrapper,
+#zen-tabs-wrapper,
+#tabbrowser-tabs,
+.zen-essentials-container,
+#zen-sidebar-top-buttons,
+#zen-sidebar-foot-buttons {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* Translucent tab surfaces allow the image-based ambient field underneath
+   to remain visible instead of replacing it with a color. */
+#tabbrowser-tabs .tabbrowser-tab .tab-background,
+.zen-essentials-container .tabbrowser-tab .tab-background {
+  background: color-mix(
+    in srgb,
+    var(--zen-main-browser-background, #111) 34%,
+    transparent
+  ) !important;
+  backdrop-filter: blur(1px) !important;
+  -moz-backdrop-filter: blur(1px) !important;
+  box-shadow: none !important;
+}
+
+/* Selected tab gets its own localized copy of the current video frame. */
+#tabbrowser-tabs .tabbrowser-tab[selected] .tab-background::after,
+.zen-essentials-container .tabbrowser-tab[selected] .tab-background::after {
+  content: "" !important;
+  position: absolute !important;
+  z-index: -1 !important;
+  pointer-events: none !important;
+  inset: -55% -20% !important;
+
+  background-image: var(--daralla-ambilight-frame) !important;
+  background-repeat: no-repeat !important;
+  background-position: right center !important;
+  background-size: 230% 100% !important;
+
+  filter:
+    blur(calc(var(--daralla-ambilight-blur) * 0.52))
+    saturate(var(--daralla-ambilight-saturation))
+    brightness(1.15) !important;
+
+  opacity: calc(var(--daralla-ambilight-opacity) * 0.52) !important;
+  transform: scale(1.12) !important;
+  border-radius: inherit !important;
+}
+
+#tabbrowser-tabs .tabbrowser-tab[selected] .tab-background {
+  background: color-mix(
+    in srgb,
+    var(--zen-main-browser-background, #111) 24%,
+    transparent
+  ) !important;
+  overflow: hidden !important;
+}
+
+/* Mirror the projector when Zen's vertical tabs are on the left. */
+:root:not([zen-right-side]) #titlebar::before,
+:root:not([zen-right-side]) #titlebar::after {
+  background-position: left center !important;
+  transform-origin: left center !important;
+}
+
+:root:not([zen-right-side])
+  #tabbrowser-tabs .tabbrowser-tab[selected] .tab-background::after,
+:root:not([zen-right-side])
+  .zen-essentials-container .tabbrowser-tab[selected] .tab-background::after {
+  background-position: left center !important;
+}
+
+/* No usable frame = no ambient light. */
+:root:not([daralla-ambilight-active="true"]) #titlebar::before,
+:root:not([daralla-ambilight-active="true"]) #titlebar::after {
+  opacity: 0 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #titlebar::before,
+  #titlebar::after {
+    transition: none !important;
+  }
+}
